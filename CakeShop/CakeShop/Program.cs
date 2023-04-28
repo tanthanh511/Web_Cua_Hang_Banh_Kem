@@ -10,10 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
     builder.Services.AddDbContext<CuaHangBanhKemContext>(options => options.UseSqlServer(
-     builder.Configuration.GetConnectionString("DefaultConnection")));
-    //builder.Services.AddDbContext<CuaHangBanhKemContext>(option => option.UseSqlServer(stringConnectdb));
-    //builder.Services.AddSingleton<HtmlEncoder>(HtmlEncoder.Create(allowedRanges: new[] {UnicodeRange.ReferenceEquals()}));
-
+    builder.Configuration.GetConnectionString("DefaultConnection")));
     builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
     builder.Services.AddNotyf(config => { config.DurationInSeconds = 10; config.IsDismissable = true; config.Position = NotyfPosition.BottomRight; });
 
