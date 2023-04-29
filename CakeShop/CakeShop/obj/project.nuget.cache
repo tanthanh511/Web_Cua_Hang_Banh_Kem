@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RsRjVInWSkf/jiu+WdEQnpta3/KG1XvyPaejHWeiE4zSgv7RSqizd2OB5/GV05VdzMkH3IskZOfxWbWFNUY3Sg==",
+  "dgSpecHash": "TRn2saaIv0ed1++pqWcGK0NssivTX5AioSrodmHbz43LjB+GRXrvXwHry4oDAsdEiOedkrokm5PN2v0FN+UNdQ==",
   "success": true,
-  "projectFilePath": "D:\\webnangcao\\do_an\\WebNC\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\CakeShop.csproj",
+  "projectFilePath": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\CakeShop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Thanh\\.nuget\\packages\\aspnetcorehero.toastnotification\\1.1.0\\aspnetcorehero.toastnotification.1.1.0.nupkg.sha512",
     "C:\\Users\\Thanh\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",

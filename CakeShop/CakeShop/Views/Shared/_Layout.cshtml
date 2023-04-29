@@ -137,7 +137,7 @@
                 <div class="col-lg-7">
                     <nav class="header__menu">
                         <ul>
-                            <li class="active"><a href="./index.html">Home</a></li>
+                            <li class="active"><a  href="./index.html">Home</a></li>
                             <li><a href="./shop-grid.html">Shop</a></li>
                             <li>
                                 <a href="#">Pages</a>
@@ -150,7 +150,7 @@
                             </li>
                             <li><a href="./blog.html">Blog</a></li>
                             <li><a href="./contact.html">Contact</a></li>
-                            <li><a asp-area="Admin" asp-controller="AdminRoles" asp-action="Index">Admin</a></li>
+                            <li><a asp-area="Admin" asp-controller="Home" asp-action="Index">Admin</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -175,20 +175,32 @@
     <!-- Footer Section Begin -->
     <footer class="footer spad">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer__about">
-                        <div class="footer__about__logo">
+            <div class="row" style="margin-left: 500px">
+
+                @*thông tin cá nhân*@
+                <div class="col-lg-12 col-md-6 col-sm-6  mx-auto">
+                    <div class="footer__about ">
+                        <div class="footer__about__logo" style="margin-left:25px">
                             <a href="./index.html"><img src="~/Userasset/img/logo.png" alt=""></a>
                         </div>
                         <ul>
-                            <li>Address: 60-49 Road 11378 New York</li>
-                            <li>Phone: +65 11.188.888</li>
-                            <li>Email: hello@colorlib.com</li>
+                            <li>Address: Đại học Đà Lạt</li>
+                            <li>Phone: +84 888.888.888</li>
+                            <li>Email: 2011439@dlu.edu.vn</li>
+                            <li>
+                                <div class=" footer__widget__social" style="margin-left: 60px">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+
+
+          @*      <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
                     <div class="footer__widget">
                         <h6>Useful Links</h6>
                         <ul>
@@ -208,8 +220,8 @@
                             <li><a href="#">Testimonials</a></li>
                         </ul>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-12">
+                </div>*@
+                @*<div class="col-lg-6 col-md-12">
                     <div class="footer__widget">
                         <h6>Join Our Newsletter Now</h6>
                         <p>Get E-mail updates about our latest shop and special offers.</p>
@@ -217,22 +229,17 @@
                             <input type="text" placeholder="Enter your mail">
                             <button type="submit" class="site-btn">Subscribe</button>
                         </form>
-                        <div class="footer__widget__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                        </div>
+                        
                     </div>
-                </div>
+                </div>*@
             </div>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="footer__copyright">
-                        <div class="footer__copyright__text">
-                            <p>
+                        <div class="footer__copyright__text text-central" >
+                            <p >
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                <script>document.write(new Date().getFullYear());</script>Is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://www.facebook.com/profile.php?id=100013667890742" target="_blank">Tấn Thanh</a>
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             </p>
                         </div>

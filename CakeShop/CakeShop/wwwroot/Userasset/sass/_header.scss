@@ -197,7 +197,7 @@
 
                     &:hover {
 
-                        &>a {
+                        & > a {
                             color: $primary-color;
                         }
                     }
@@ -226,7 +226,7 @@
                     visibility: visible;
                 }
 
-                &>a {
+                & > a {
                     color: $primary-color;
                 }
             }
