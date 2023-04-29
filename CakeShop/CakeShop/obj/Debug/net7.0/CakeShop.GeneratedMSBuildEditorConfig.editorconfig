@@ -9,85 +9,85 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CakeShop
 build_property.RootNamespace = CakeShop
-build_property.ProjectDir = D:\webnangcao\do_an\WebNC\Web_Cua_Hang_Banh_Kem\CakeShop\CakeShop\
+build_property.ProjectDir = C:\Users\acer\Du\WorkSpace\ProjectGroupWebNC\Web_Cua_Hang_Banh_Kem\CakeShop\CakeShop\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = D:\webnangcao\do_an\WebNC\Web_Cua_Hang_Banh_Kem\CakeShop\CakeShop
+build_property.MSBuildProjectDirectory = C:\Users\acer\Du\WorkSpace\ProjectGroupWebNC\Web_Cua_Hang_Banh_Kem\CakeShop\CakeShop
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/webnangcao/do_an/WebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Areas/Admin/Views/AdminRoles/Create.cshtml]
+[C:/Users/acer/Du/WorkSpace/ProjectGroupWebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Areas/Admin/Views/AdminRoles/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5Sb2xlc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/webnangcao/do_an/WebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Areas/Admin/Views/AdminRoles/Delete.cshtml]
+[C:/Users/acer/Du/WorkSpace/ProjectGroupWebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Areas/Admin/Views/AdminRoles/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5Sb2xlc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/webnangcao/do_an/WebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Areas/Admin/Views/AdminRoles/Details.cshtml]
+[C:/Users/acer/Du/WorkSpace/ProjectGroupWebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Areas/Admin/Views/AdminRoles/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5Sb2xlc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/webnangcao/do_an/WebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Areas/Admin/Views/AdminRoles/Edit.cshtml]
+[C:/Users/acer/Du/WorkSpace/ProjectGroupWebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Areas/Admin/Views/AdminRoles/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5Sb2xlc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/webnangcao/do_an/WebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Areas/Admin/Views/AdminRoles/Index.cshtml]
+[C:/Users/acer/Du/WorkSpace/ProjectGroupWebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Areas/Admin/Views/AdminRoles/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5Sb2xlc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/webnangcao/do_an/WebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Areas/Admin/Views/Home/Index.cshtml]
+[C:/Users/acer/Du/WorkSpace/ProjectGroupWebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Areas/Admin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/webnangcao/do_an/WebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Areas/Admin/Views/Shared/Error.cshtml]
+[C:/Users/acer/Du/WorkSpace/ProjectGroupWebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Areas/Admin/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/webnangcao/do_an/WebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Areas/Admin/Views/Shared/_SideNavPartialView.cshtml]
+[C:/Users/acer/Du/WorkSpace/ProjectGroupWebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Areas/Admin/Views/Shared/_SideNavPartialView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9TaWRlTmF2UGFydGlhbFZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/webnangcao/do_an/WebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Areas/Admin/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/acer/Du/WorkSpace/ProjectGroupWebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Areas/Admin/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/webnangcao/do_an/WebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Areas/Admin/Views/_ViewImports.cshtml]
+[C:/Users/acer/Du/WorkSpace/ProjectGroupWebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/webnangcao/do_an/WebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Areas/Admin/Views/_ViewStart.cshtml]
+[C:/Users/acer/Du/WorkSpace/ProjectGroupWebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Areas/Admin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/webnangcao/do_an/WebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Views/Home/Index.cshtml]
+[C:/Users/acer/Du/WorkSpace/ProjectGroupWebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/webnangcao/do_an/WebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Views/Home/Privacy.cshtml]
+[C:/Users/acer/Du/WorkSpace/ProjectGroupWebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/webnangcao/do_an/WebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Views/Shared/Error.cshtml]
+[C:/Users/acer/Du/WorkSpace/ProjectGroupWebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/webnangcao/do_an/WebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/acer/Du/WorkSpace/ProjectGroupWebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/webnangcao/do_an/WebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Views/_ViewImports.cshtml]
+[C:/Users/acer/Du/WorkSpace/ProjectGroupWebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/webnangcao/do_an/WebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Views/_ViewStart.cshtml]
+[C:/Users/acer/Du/WorkSpace/ProjectGroupWebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/webnangcao/do_an/WebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
+[C:/Users/acer/Du/WorkSpace/ProjectGroupWebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-sdhzyh9voi
 
-[D:/webnangcao/do_an/WebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Views/Shared/_Layout.cshtml]
+[C:/Users/acer/Du/WorkSpace/ProjectGroupWebNC/Web_Cua_Hang_Banh_Kem/CakeShop/CakeShop/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-e0ay2mg9lx
