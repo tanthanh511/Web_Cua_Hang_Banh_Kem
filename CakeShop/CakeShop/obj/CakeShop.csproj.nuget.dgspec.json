@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\webnangcao\\do_an\\WebNC\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\CakeShop.csproj": {}
+    "C:\\Users\\acer\\Du\\WorkSpace\\WebNC_Nhom\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\CakeShop.csproj": {}
   },
   "projects": {
-    "D:\\webnangcao\\do_an\\WebNC\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\CakeShop.csproj": {
+    "C:\\Users\\acer\\Du\\WorkSpace\\WebNC_Nhom\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\CakeShop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\webnangcao\\do_an\\WebNC\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\CakeShop.csproj",
+        "projectUniqueName": "C:\\Users\\acer\\Du\\WorkSpace\\WebNC_Nhom\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\CakeShop.csproj",
         "projectName": "CakeShop",
-        "projectPath": "D:\\webnangcao\\do_an\\WebNC\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\CakeShop.csproj",
-        "packagesPath": "C:\\Users\\Thanh\\.nuget\\packages\\",
-        "outputPath": "D:\\webnangcao\\do_an\\WebNC\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\obj\\",
+        "projectPath": "C:\\Users\\acer\\Du\\WorkSpace\\WebNC_Nhom\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\CakeShop.csproj",
+        "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\acer\\Du\\WorkSpace\\WebNC_Nhom\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Thanh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -90,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }
