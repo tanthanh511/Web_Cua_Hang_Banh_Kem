@@ -169,6 +169,10 @@
       "PackagePath": "staticwebassets\\Userasset\\img\\cake2.png"
     },
     {
+      "Id": "C:\\Users\\acer\\Du\\WorkSpace\\WebNC_Nhom\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\Userasset\\img\\cake_logo.png",
+      "PackagePath": "staticwebassets\\Userasset\\img\\cake_logo.png"
+    },
+    {
       "Id": "C:\\Users\\acer\\Du\\WorkSpace\\WebNC_Nhom\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\Userasset\\img\\cart\\cart-1.jpg",
       "PackagePath": "staticwebassets\\Userasset\\img\\cart\\cart-1.jpg"
     },
@@ -521,8 +525,8 @@
       "PackagePath": "staticwebassets\\adminasset\\css\\sb-admin-2.min.css"
     },
     {
-      "Id": "C:\\Users\\acer\\Du\\WorkSpace\\WebNC_Nhom\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\adminasset\\img\\cake2.png",
-      "PackagePath": "staticwebassets\\adminasset\\img\\cake2.png"
+      "Id": "C:\\Users\\acer\\Du\\WorkSpace\\WebNC_Nhom\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\adminasset\\img\\cake_logo.png",
+      "PackagePath": "staticwebassets\\adminasset\\img\\cake_logo.png"
     },
     {
       "Id": "C:\\Users\\acer\\Du\\WorkSpace\\WebNC_Nhom\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\adminasset\\img\\undraw_posting_photo.svg",

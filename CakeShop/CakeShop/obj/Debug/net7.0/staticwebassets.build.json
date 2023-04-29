@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "CmKbyIcVcBvqZShKjD3c45RawcB/C2eXMEek26m6Lxg=",
+  "Hash": "Tg2EPGwsK2kVakhnaJFfBwhcPH2XBLZnPIDFsRgtW5U=",
   "Source": "CakeShop",
   "BasePath": "_content/CakeShop",
   "Mode": "Default",
@@ -153,12 +153,12 @@
       "OriginalItemSpec": "wwwroot\\adminasset\\css\\sb-admin-2.min.css"
     },
     {
-      "Identity": "C:\\Users\\acer\\Du\\WorkSpace\\WebNC_Nhom\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\adminasset\\img\\cake2.png",
+      "Identity": "C:\\Users\\acer\\Du\\WorkSpace\\WebNC_Nhom\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\adminasset\\img\\cake_logo.png",
       "SourceId": "CakeShop",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\acer\\Du\\WorkSpace\\WebNC_Nhom\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\",
       "BasePath": "_content/CakeShop",
-      "RelativePath": "adminasset/img/cake2.png",
+      "RelativePath": "adminasset/img/cake_logo.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -167,7 +167,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\adminasset\\img\\cake2.png"
+      "OriginalItemSpec": "wwwroot\\adminasset\\img\\cake_logo.png"
     },
     {
       "Identity": "C:\\Users\\acer\\Du\\WorkSpace\\WebNC_Nhom\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\adminasset\\img\\undraw_posting_photo.svg",
@@ -33250,6 +33250,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Userasset\\img\\breadcrumb.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\acer\\Du\\WorkSpace\\WebNC_Nhom\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\Userasset\\img\\cake_logo.png",
+      "SourceId": "CakeShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\acer\\Du\\WorkSpace\\WebNC_Nhom\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\",
+      "BasePath": "_content/CakeShop",
+      "RelativePath": "Userasset/img/cake_logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Userasset\\img\\cake_logo.png"
     },
     {
       "Identity": "C:\\Users\\acer\\Du\\WorkSpace\\WebNC_Nhom\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\Userasset\\img\\cake2.png",
