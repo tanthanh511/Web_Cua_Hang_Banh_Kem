@@ -2,6 +2,7 @@
 using CakeShop.Models;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace CakeShop.Controllers
 {
     public class ProductController : Controller
