@@ -1,7 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using CakeShop.Models;
-using Microsoft.EntityFrameworkCore;
-
+﻿using CakeShop.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CakeShop.Controllers
 {
@@ -13,21 +11,15 @@ namespace CakeShop.Controllers
         {
             _context = context;
         }
-
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Details(int id)
+        public IActionResult Detail(int id)
         {
-            var product = _context.Products.Include(x => x.CatId).FirstOrDefault(x => x.ProductId == id);
-            if (product == null)
-            {
-                return RedirectToAction("Index");
-            }
-            
-            return View(product);
+
+            return View();
         }
     }
 }
