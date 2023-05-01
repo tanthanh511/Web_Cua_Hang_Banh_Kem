@@ -32,4 +32,6 @@ public partial class Category
     public string? Cover { get; set; }
 
     public string? SchemaMarkup { get; set; }
+
+    public virtual ICollection<Product> Products { get; set; } = new List<Product>();
 }

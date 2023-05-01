@@ -1,16 +1,18 @@
 ﻿@model IEnumerable<CakeShop.Models.Role>
 
 @{
-    ViewData["QuyenTruyCap"] = "QuyenTruyCap";
+    ViewData["QuyenTruyCap"] = "Quyền truy cập";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<div class="col-md-10">
+
+
+<div class="col-md-10 text-center">
    
-    <h1>Index</h1>
+    <h1>Quản lí quyền truy cập</h1>
 
     <p>
-    <a asp-action="Create">Create New</a>
+        <a class="btn btn-info btn-tone"  asp-action="Create">Create New</a>
     </p>
     <div class="table-responsive">
         <table class="table">

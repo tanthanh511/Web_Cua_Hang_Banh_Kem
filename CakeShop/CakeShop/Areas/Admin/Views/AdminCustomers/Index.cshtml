@@ -9,15 +9,15 @@
 }
 
 
-<div class="col-md-12 text-center">
+<div class="col-md-10 text-center">
 
-    <h1>Quản lí tài khoản</h1>
+    <h1>Quản lí tài khoản : page @CurrentPage</h1>
     <p>
-        <a asp-action="Create">Create New</a>
+        <a class="btn btn-info btn-tone" asp-action="Create">Create New</a>
     </p>
 
 
-    <div class="col-md-10">
+    <div class="col-md-12">
         <div class="card">
             <div class="card-body">
                 <div class="row m-b-30">
@@ -52,12 +52,8 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>FullName</th>
-                                    <th>Phone</th>
-                                    <th>Email</th>
                                     <th>Address</th>
                                     <th>Province</th>
-                                    <th>RoleID</th>
-                                    <th>Active</th>
                                 </tr>
                             </thead>
 
@@ -68,12 +64,14 @@
                                     {
                                         <tr>
                                             <td>@item.CustomerId</td>
-                                            <td>@item.FullName</td>
-                                            <td>@item.Phone</td>
-                                            <td>@item.Email</td>
-                                            <td>@item.Password</td>
-                                          
-                                            <td>@item.LastLogin</td>
+                                            <td>
+                                                <p>@item.FullName</p>
+                                                <p>@item.Phone</p>
+                                                <p>@item.Email</p>
+                                            </td>
+                                            <td>@item.Address</td>
+                                            <td>@item.Location.Name</td>
+                                         
                                           @*  <td>@item.RoleId</td>*@
 
                                             <td>
@@ -106,6 +104,11 @@
 
                             </tbody>
                         </table>
+                        <div aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <pager class="pager-container" list="@Model" asp-area="Admin" asp-controller="AdminCustomers" asp-action="Index" />
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

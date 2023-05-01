@@ -20,4 +20,6 @@ public partial class OrderDetail
     public int? Total { get; set; }
 
     public DateTime? ShipDate { get; set; }
+
+    public virtual Order? Order { get; set; }
 }

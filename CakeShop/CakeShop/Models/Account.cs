@@ -24,4 +24,6 @@ public partial class Account
     public DateTime? LastLogin { get; set; }
 
     public DateTime? CreateDate { get; set; }
+
+    public virtual Role? Role { get; set; }
 }
