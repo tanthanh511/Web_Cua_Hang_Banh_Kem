@@ -24,8 +24,9 @@
                         <div class="d-md-flex" style="padding-bottom: 87px;">
                             <div class="m-b-10 m-r-15">
 
-                                <select class="custom-select" id="idrole" name="idrole" style="min-width:200px;" asp-items="ViewBag.QuyenTruyCap">
-                                    <option value="0" disabled selected>Chọn quyền truy cập</option>
+                                <select class="custom-select" id="txtCatID" name="txtCatID" style="min-width:200px;" asp-items="ViewBag.DanhMuc">
+                                    <option selected>Chọn danh mục</option>
+                                    <option value="all">All</option>
                                 </select>
 
                                 @*<select class="custom-select" style="min-width:180px;">
@@ -120,7 +121,7 @@
                         </table>
                         <div aria-label="Page navigation example">
                             <ul class="pagination">
-                                <pager class="pager-container" list="@Model" asp-area="Admin" asp-controller="AdminProducts" asp-action="Index" />
+                                <pager class="pager-container" list="@Model" asp-area="Admin" asp-controller="AdminProducts" asp-route-CatID="@ViewBag.CurrentCateID" asp-action="Index" />
                             </ul>
                         </div>
                     </div>
@@ -130,6 +131,39 @@
     </div>
 </div>
 
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            jQuery("#txtCatID").change(function () {
+                var catID = jQuery(this).children(":selected").attr("value");
+                catID = parseFloat(catID);
+                $('#txtCatID option')
+                    .removeAttr('selected');
+                $("txtCatID > [value="+catID +"]").attr("selected" ,"true");
+
+                $.ajax({
+                    url: '/Admin/AdminProducts/Filtter',
+                    datatype: "json",
+                    type :"GET",
+                    data: {
+                        CatID: catID    
+                    },
+                    async: true,
+                    
+                    success: function (results){
+                        if(results.status == "success"){
+                            window.location.href = results.redirecUrl;
+                        }
+                    },
+                    error: function (xhr) {
+                        alert('error');
+                    }
+                });
+            });
+        });
+    </script>
+}
 
 
 @*<h1>Index</h1>
