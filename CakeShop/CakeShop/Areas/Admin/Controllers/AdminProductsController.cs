@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CakeShop.Models;
 using PagedList.Core;
+using CakeShop.Helpper;
+using AspNetCoreHero.ToastNotification.Abstractions;
 
 namespace CakeShop.Areas.Admin.Controllers
 {
@@ -14,10 +16,12 @@ namespace CakeShop.Areas.Admin.Controllers
     public class AdminProductsController : Controller
     {
         private readonly CuaHangBanhKemContext _context;
+        public INotyfService _notifyService { get; }
 
-        public AdminProductsController(CuaHangBanhKemContext context)
+        public AdminProductsController(CuaHangBanhKemContext context, INotyfService notyfService)
         {
             _context = context;
+            _notifyService = notyfService;
         }
 
         // GET: Admin/AdminProducts
@@ -98,12 +102,25 @@ namespace CakeShop.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProductId,ProductName,ShortDesc,Description,CatId,Price,Discount,Thumb,Video,DateCreated,DateModified,BestSellers,HomeFlag,Active,Tags,Title,Alias,MetaDesc,MetaKey,UnitslnStock")] Product product)
+        public async Task<IActionResult> Create([Bind("ProductId,ProductName,ShortDesc,Description,CatId,Price,Discount,Thumb,Video,DateCreated,DateModified,BestSellers,HomeFlag,Active,Tags,Title,Alias,MetaDesc,MetaKey,UnitslnStock")] Product product, Microsoft.AspNetCore.Http.IFormFile fThumb)
         {
             if (ModelState.IsValid)
             {
+                product.ProductName = Utilities.ToTitleCase(product.ProductName);
+                if (fThumb != null)
+                {
+                    string extension = Path.GetExtension(fThumb.FileName);
+                    string image = Utilities.SEOUrl(product.ProductName) + extension;
+                    product.Thumb = await Utilities.UploadFile(fThumb, @"products", image.ToLower());
+                }
+                if (string.IsNullOrEmpty(product.Thumb)) product.Thumb = "default.jpg";
+                product.Alias = Utilities.SEOUrl(product.ProductName);
+                product.DateModified = DateTime.Now;
+                product.DateCreated = DateTime.Now;
+
                 _context.Add(product);
                 await _context.SaveChangesAsync();
+                _notifyService.Success("Thêm SP thành công");
                 return RedirectToAction(nameof(Index));
             }
             ViewData["DanhMuc"] = new SelectList(_context.Categories, "CatId", "CatName", product.CatId);
@@ -132,7 +149,7 @@ namespace CakeShop.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ProductId,ProductName,ShortDesc,Description,CatId,Price,Discount,Thumb,Video,DateCreated,DateModified,BestSellers,HomeFlag,Active,Tags,Title,Alias,MetaDesc,MetaKey,UnitslnStock")] Product product)
+        public async Task<IActionResult> Edit(int id, [Bind("ProductId,ProductName,ShortDesc,Description,CatId,Price,Discount,Thumb,Video,DateCreated,DateModified,BestSellers,HomeFlag,Active,Tags,Title,Alias,MetaDesc,MetaKey,UnitslnStock")] Product product, Microsoft.AspNetCore.Http.IFormFile fThumb)
         {
             if (id != product.ProductId)
             {
@@ -143,7 +160,18 @@ namespace CakeShop.Areas.Admin.Controllers
             {
                 try
                 {
+                    product.ProductName = Utilities.ToTitleCase(product.ProductName);
+                    if (fThumb != null)
+                    {
+                        string extension = Path.GetExtension(fThumb.FileName);
+                        string image = Utilities.SEOUrl(product.ProductName) + extension;
+                        product.Thumb = await Utilities.UploadFile(fThumb, @"products", image.ToLower());
+                    }
+                    if (string.IsNullOrEmpty(product.Thumb)) product.Thumb = "default.jpg";
+                    product.Alias = Utilities.SEOUrl(product.ProductName);
+                    product.DateModified = DateTime.Now;
                     _context.Update(product);
+                    _notifyService.Success("Cập nhật SP thành công");
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -198,6 +226,7 @@ namespace CakeShop.Areas.Admin.Controllers
             }
             
             await _context.SaveChangesAsync();
+            _notifyService.Success("Xóa SP thành công");
             return RedirectToAction(nameof(Index));
         }
 

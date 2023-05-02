@@ -5,14 +5,14 @@
 
 @{
     int CurrentPage = ViewBag.CurrentPage;
-    ViewData["Title"] = "Danh sách page" + CurrentPage;
+    ViewData["Title"] = "Danh sách Paged";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
 
 <div class="col-md-10 text-center">
 
-    <h1>Quản lí pages : page @CurrentPage</h1>
+    <h1>Quản lí Paged: page @CurrentPage</h1>
     <p>
         <a class="btn btn-info btn-tone" asp-action="Create">Create New</a>
     </p>

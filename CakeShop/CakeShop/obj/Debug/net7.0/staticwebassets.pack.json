@@ -7949,6 +7949,22 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\products\\addd.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\addd.jpg"
+    },
+    {
+      "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\products\\banh-mi-sanwich-aaaa.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\banh-mi-sanwich-aaaa.jpg"
+    },
+    {
+      "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\products\\banh-mi-sanwich.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\banh-mi-sanwich.jpg"
+    },
+    {
+      "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\products\\dddd.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\dddd.jpg"
+    },
+    {
       "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
