@@ -16,7 +16,7 @@
     <hr />
     <div class="row">
         <div class="col-md-12">
-            <form asp-action="Create">
+            <form asp-controller="AdminPages" asp-action="Create" method="post" enctype="multipart/form-data">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
                     <label asp-for="PageName" class="control-label"></label>
@@ -28,9 +28,10 @@
                     <input asp-for="Contents" class="form-control" />
                     <span asp-validation-for="Contents" class="text-danger"></span>
                 </div>
+                @*thêm ảnh đại diện*@
                 <div class="form-group">
-                    <label asp-for="Thumb" class="control-label"></label>
-                    <input asp-for="Thumb" class="form-control" />
+                    <label class="font-weight-semibold" for="productBrand">Ảnh đại diện</label>
+                    <input name="fThumb" type="file" class="form-control-file" asp-for="Thumb" />
                     <span asp-validation-for="Thumb" class="text-danger"></span>
                 </div>
                 <div class="form-group form-check">

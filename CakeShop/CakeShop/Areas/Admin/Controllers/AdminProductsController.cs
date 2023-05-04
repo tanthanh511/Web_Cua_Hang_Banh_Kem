@@ -32,6 +32,7 @@ namespace CakeShop.Areas.Admin.Controllers
             var pageNumber = page;
             var pageSize = 5;
 
+            // combobox
             List<Product> lsProducts = new List<Product>();
 
             if (CatID != 0)

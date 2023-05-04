@@ -4,13 +4,13 @@
 
 @{
     int CurrentPage = ViewBag.CurrentPage;
-    ViewData["Title"] = "Quản lí sản phẩm" + CurrentPage;
+    ViewData["Title"] = "Quản lí sản phẩm - page: " + CurrentPage;
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
 <div class="col-md-10 text-center">
 
-    <h1>Quản lí sản phẩm : page @CurrentPage</h1>
+    <h1>Quản lí sản phẩm - page: @CurrentPage</h1>
     <p>
         <a class="btn btn-info btn-tone" asp-action="Create">Create New</a>
     </p>
@@ -22,13 +22,23 @@
                 <div class="row m-b-30">
                     <div class="col-lg-12">
                         <div class="d-md-flex" style="padding-bottom: 87px;">
-                            <div class="m-b-10 m-r-15">
 
+                            <div class="m-b-10 m-r-15">
                                 <select class="custom-select" id="txtCatID" name="txtCatID" style="min-width:200px;" asp-items="ViewBag.DanhMuc">
                                     <option selected>Chọn danh mục</option>
                                     <option value="all">All</option>
                                 </select>
                             </div>
+
+                            <div class="m-b-10" style="margin-left: 35px;">
+                               <div class="input-affix m-v-10">
+                                   <i class="prefix-icon anticon anticon-search opacity-04"></i>
+                                    <input id="keyword" name="keyword" type="text" class="form-control" placeholder="Search" />
+                               </div>
+
+                    
+                            </div>
+
                         </div>
                     </div>
 
@@ -46,7 +56,7 @@
                                 </tr>
                             </thead>
 
-                            <tbody>
+                            <tbody id="records_table">
                                 @if (Model != null)
                                 {
                                     foreach (var item in Model)
@@ -121,6 +131,7 @@
 @section Scripts{
     <script>
         $(document).ready(function () {
+            //load combobox
             jQuery("#txtCatID").change(function () {
                 var catID = jQuery(this).children(":selected").attr("value");
                 catID = parseFloat(catID);
@@ -141,6 +152,25 @@
                         if(results.status == "success"){
                             window.location.href = results.redirecUrl;
                         }
+                    },
+                    error: function (xhr) {
+                        alert('error');
+                    }
+                });
+            });
+
+            //Search
+            $("#keyword").keyup(function () {
+                var strkeyword = $('#keyword').val();
+                $.ajax({
+                    url: '/Admin/Search/FindProduct/',
+                    datatype: "json",
+                    type: "POST",
+                    data: { keyword: strkeyword },
+                    async: true,
+                    success: function (results) {
+                        $("#records_table").html("");
+                        $("#records_table").html(results);
                     },
                     error: function (xhr) {
                         alert('error');

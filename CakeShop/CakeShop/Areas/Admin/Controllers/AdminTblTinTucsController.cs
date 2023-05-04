@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CakeShop.Models;
 using PagedList.Core;
+using CakeShop.Helpper;
+using AspNetCoreHero.ToastNotification.Abstractions;
 
 namespace CakeShop.Areas.Admin.Controllers
 {
@@ -14,18 +16,38 @@ namespace CakeShop.Areas.Admin.Controllers
     public class AdminTblTinTucsController : Controller
     {
         private readonly CuaHangBanhKemContext _context;
-
-        public AdminTblTinTucsController(CuaHangBanhKemContext context)
+        public INotyfService _notifyService { get; }
+        public AdminTblTinTucsController(CuaHangBanhKemContext context, INotyfService notyfService)
         {
             _context = context;
+            _notifyService = notyfService;
+
         }
 
         // GET: Admin/AdminTblTinTucs
 
         public IActionResult Index(int? page)
         {
+            // tạo 10 dữ liệu giống nhau 
+            //var tin = _context.TblTinTucs.Find(781);
+            //for (int i = 781; i < 790; i++)
+            //{
+            //    TblTinTuc tblTinTuc = new TblTinTuc();
+            //    tblTinTuc.Title = tin.Title;
+            //    tblTinTuc.Published = tin.Published;
+            //    tblTinTuc.Alias = tin.Alias;
+            //    tblTinTuc.IsHot = tin.IsHot;
+            //    tblTinTuc.IsNewfeed = tin.IsNewfeed;
+            //    tblTinTuc.CreatedDate = tin.CreatedDate;
+            //    tblTinTuc.Contents = tin.Contents;
+            //    tblTinTuc.MetaDesc = tin.Title;
+            //    tblTinTuc.MetaKey = tin.Title;
+            //    _context.Add(tblTinTuc);
+            //    _context.SaveChanges();
+            //}
+
             var pageNumber = page == null || page <= 0 ? 1 : page.Value;
-            var pageSize = 5;
+            var pageSize = 10;
             var lsTinTuc = _context.TblTinTucs
                 .AsNoTracking()
                 .OrderByDescending(x => x.PostId);
@@ -33,8 +55,6 @@ namespace CakeShop.Areas.Admin.Controllers
             PagedList<TblTinTuc> models = new PagedList<TblTinTuc>(lsTinTuc, pageNumber, pageSize);
             ViewBag.CurrentPage = pageNumber;
             return View(models);
-
-
         }
 
         //public async Task<IActionResult> Index()
@@ -69,16 +89,25 @@ namespace CakeShop.Areas.Admin.Controllers
         }
 
         // POST: Admin/AdminTblTinTucs/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PostId,Title,Scontents,Contents,Thumb,Published,Alias,CreatedDate,Author,AccountId,Tags,CatId,IsHot,IsNewfeed,MetaKey,MetaDesc,Views")] TblTinTuc tblTinTuc)
+        public async Task<IActionResult> Create([Bind("PostId,Title,Scontents,Contents,Thumb,Published,Alias,CreatedDate,Author,AccountId,Tags,CatId,IsHot,IsNewfeed,MetaKey,MetaDesc,Views")] TblTinTuc tblTinTuc, Microsoft.AspNetCore.Http.IFormFile fThumb)
         {
             if (ModelState.IsValid)
             {
+                // xử lí thumb
+                if (fThumb != null)
+                {
+                    string extension = Path.GetExtension(fThumb.FileName);
+                    string imageName = Utilities.SEOUrl(tblTinTuc.Title) + extension;
+                    tblTinTuc.Thumb = await Utilities.UploadFile(fThumb, @"news", imageName.ToLower());
+                }
+                if (string.IsNullOrEmpty(tblTinTuc.Thumb)) tblTinTuc.Thumb = "default.jpg";
+                tblTinTuc.Alias = Utilities.SEOUrl(tblTinTuc.Title);
+                tblTinTuc.CreatedDate = DateTime.Now;
                 _context.Add(tblTinTuc);
                 await _context.SaveChangesAsync();
+                _notifyService.Success("Thêm tin tức thành công");
                 return RedirectToAction(nameof(Index));
             }
             return View(tblTinTuc);
@@ -101,11 +130,9 @@ namespace CakeShop.Areas.Admin.Controllers
         }
 
         // POST: Admin/AdminTblTinTucs/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PostId,Title,Scontents,Contents,Thumb,Published,Alias,CreatedDate,Author,AccountId,Tags,CatId,IsHot,IsNewfeed,MetaKey,MetaDesc,Views")] TblTinTuc tblTinTuc)
+        public async Task<IActionResult> Edit(int id, [Bind("PostId,Title,Scontents,Contents,Thumb,Published,Alias,CreatedDate,Author,AccountId,Tags,CatId,IsHot,IsNewfeed,MetaKey,MetaDesc,Views")] TblTinTuc tblTinTuc, Microsoft.AspNetCore.Http.IFormFile fThumb)
         {
             if (id != tblTinTuc.PostId)
             {
@@ -116,7 +143,18 @@ namespace CakeShop.Areas.Admin.Controllers
             {
                 try
                 {
+
+                    // xử lí thumb
+                    if (fThumb != null)
+                    {
+                        string extension = Path.GetExtension(fThumb.FileName);
+                        string imageName = Utilities.SEOUrl(tblTinTuc.Title) + extension;
+                        tblTinTuc.Thumb = await Utilities.UploadFile(fThumb, @"news", imageName.ToLower());
+                    }
+                    if (string.IsNullOrEmpty(tblTinTuc.Thumb)) tblTinTuc.Thumb = "default.jpg";
+                    tblTinTuc.Alias = Utilities.SEOUrl(tblTinTuc.Title);
                     _context.Update(tblTinTuc);
+                    _notifyService.Success("Cập nhật tin tức thành công");
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -169,6 +207,7 @@ namespace CakeShop.Areas.Admin.Controllers
             }
             
             await _context.SaveChangesAsync();
+            _notifyService.Success("Xóa tin tức thành công");
             return RedirectToAction(nameof(Index));
         }
 

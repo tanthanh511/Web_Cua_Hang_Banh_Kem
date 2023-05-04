@@ -78,7 +78,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                
                 <a class="collapse-item" asp-area="Admin" asp-controller="AdminAccounts" asp-action="Index">Quản lí tài khoản</a>
-                <a class="collapse-item">Quản lí doanh mục</a>
+                <a class="collapse-item" asp-area="Admin" asp-controller="AdminCategories" asp-action="Index">Quản lí doanh mục</a>
                 <a class="collapse-item" asp-area="Admin" asp-controller="AdminRoles" asp-action="Index">Quản lí quyền truy cập</a>
                 <a class="collapse-item" >Quản lí tỉnh thành</a>
             </div>
@@ -105,7 +105,7 @@
     <!-- Quản lí paged -->
     <li class="nav-item">
         <a class="nav-link" asp-area="Admin" asp-controller="AdminPages" asp-action="Index">
-            <i class="fas fa-fw fa-table"></i>
+            <i class="fas fa-sliders"></i>
             <span>Quản lí paged</span>
         </a>
     </li>

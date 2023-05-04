@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CakeShop.Models;
 using PagedList.Core;
+using CakeShop.Helpper;
+using AspNetCoreHero.ToastNotification.Abstractions;
 
 namespace CakeShop.Areas.Admin.Controllers
 {
@@ -14,10 +16,11 @@ namespace CakeShop.Areas.Admin.Controllers
     public class AdminPagesController : Controller
     {
         private readonly CuaHangBanhKemContext _context;
-
-        public AdminPagesController(CuaHangBanhKemContext context)
+        public INotyfService _notifyService { get; }
+        public AdminPagesController(CuaHangBanhKemContext context, INotyfService notyfService)
         {
             _context = context;
+            _notifyService = notyfService;
         }
 
         // GET: Admin/AdminPages
@@ -76,12 +79,23 @@ namespace CakeShop.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PageId,PageName,Contents,Thumb,Published,Title,MetaDesc,MetaKey,Alias,CreatedDate,Ordering")] Page page)
+        public async Task<IActionResult> Create([Bind("PageId,PageName,Contents,Thumb,Published,Title,MetaDesc,MetaKey,Alias,CreatedDate,Ordering")] Page page, Microsoft.AspNetCore.Http.IFormFile fThumb)
         {
             if (ModelState.IsValid)
             {
+                // xử lí thumb
+                if (fThumb != null)
+                {
+                    string extension = Path.GetExtension(fThumb.FileName);
+                    string imageName = Utilities.SEOUrl(page.PageName) + extension;
+                    page.Thumb = await Utilities.UploadFile(fThumb, @"pages", imageName.ToLower());
+                }
+                if (string.IsNullOrEmpty(page.Thumb)) page.Thumb = "default.jpg";
+                page.Alias = Utilities.SEOUrl(page.PageName);
+
                 _context.Add(page);
                 await _context.SaveChangesAsync();
+                _notifyService.Success("Thêm page thành công");
                 return RedirectToAction(nameof(Index));
             }
             return View(page);
@@ -108,7 +122,7 @@ namespace CakeShop.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PageId,PageName,Contents,Thumb,Published,Title,MetaDesc,MetaKey,Alias,CreatedDate,Ordering")] Page page)
+        public async Task<IActionResult> Edit(int id, [Bind("PageId,PageName,Contents,Thumb,Published,Title,MetaDesc,MetaKey,Alias,CreatedDate,Ordering")] Page page, Microsoft.AspNetCore.Http.IFormFile fThumb)
         {
             if (id != page.PageId)
             {
@@ -119,7 +133,17 @@ namespace CakeShop.Areas.Admin.Controllers
             {
                 try
                 {
+
+                    if (fThumb != null)
+                    {
+                        string extension = Path.GetExtension(fThumb.FileName);
+                        string imageName = Utilities.SEOUrl(page.PageName) + extension;
+                        page.Thumb = await Utilities.UploadFile(fThumb, @"pages", imageName.ToLower());
+                    }
+                    if (string.IsNullOrEmpty(page.Thumb)) page.Thumb = "default.jpg";
+                    page.Alias = Utilities.SEOUrl(page.PageName);
                     _context.Update(page);
+                    _notifyService.Success("Cập nhật page thành công");
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -172,6 +196,7 @@ namespace CakeShop.Areas.Admin.Controllers
             }
             
             await _context.SaveChangesAsync();
+            _notifyService.Success("Xóa page thành công");
             return RedirectToAction(nameof(Index));
         }
 

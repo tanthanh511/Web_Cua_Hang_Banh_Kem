@@ -26,8 +26,12 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Title</th>
+                                    <th>Ngày tạo</th>
+                                    <th>Hot</th>
+                                    <th>New Feed</th>
                                     <th>Active</th>
                                     <th>#</th>
+                                   
                                 </tr>
                             </thead>
 
@@ -39,22 +43,57 @@
                                         <tr>
                                             <td>@item.PostId</td>
                                             <td>@item.Title</td>
+                                            <td>@item.CreatedDate</td>
+                                            <td>
+                                                @if (item.IsHot == true)
+                                                {
+                                                    <div >
+                                                        
+                                                        <div>Hot</div>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div>
+                                                        
+                                                        <div>0</div>
+                                                    </div>
+                                                }
+                                            </td>
+
+                                            <td>
+                                                @if (item.IsNewfeed == true)
+                                                {
+                                                    <div>
+                                                        
+                                                        <div>Newfeed</div>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div>
+                                                       
+                                                        <div>0</div>
+                                                    </div>
+                                                }
+                                            </td>
                                             <td >
                                                 @if (item.Published == true)
                                                 {
-                                                    <div class="d-flex align-item-center">
-                                                        <div class="badge badge-success badge-dot m-r-10"></div>
+                                                    <div >
+                                                        
                                                         <div>Public</div>
                                                     </div>
                                                 }
                                                 else
                                                 {
-                                                    <div class="d-flex align-item-center">
-                                                        <div class="badge badge-success badge-dot m-r-10"></div>
+                                                    <div>
+                                                       
                                                         <div>Non-Public</div>
                                                     </div>
                                                 }
                                             </td>
+                                         
 
                                             <td class="text-right">
                                                 <a class="btn btn-warning btn-tone m-r-5" asp-area="Admin" asp-controller="AdminTblTinTucs" asp-action="Edit" asp-route-id="@item.PostId">Edit</a>

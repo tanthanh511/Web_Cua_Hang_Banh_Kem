@@ -1,0 +1,189 @@
+﻿
+@using PagedList.Core.Mvc
+@model PagedList.Core.IPagedList<CakeShop.Models.Category>
+@{
+    int CurrentPage = ViewBag.CurrentPage;
+    ViewData["Title"] = "Danh mục sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="col-md-10 text-center">
+
+    <h1>Danh mục sản phẩm : page @CurrentPage</h1>
+    <p>
+        <a class="btn btn-info btn-tone" asp-action="Create">Create New</a>
+    </p>
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row m-b-30">
+
+
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Title</th>
+                                    <th>Ordering</th>
+                                    <th>Active</th>
+                                    <th>#</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @if (Model != null)
+                                {
+                                    foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.CatId</td>
+                                            <td>@item.CatName</td>
+                                            <td>@item.Ordering</td>
+                                            <td>
+                                                @if (item.Published == true)
+                                                {
+                                                    <div class="d-flex align-item-center">
+                                                        <div class="badge badge-success badge-dot m-r-10"></div>
+                                                        <div>Public</div>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div class="d-flex align-item-center">
+                                                        <div class="badge badge-success badge-dot m-r-10"></div>
+                                                        <div>Non-Public</div>
+                                                    </div>
+                                                }
+                                            </td>
+
+                                            <td class="text-right">
+                                                <a class="btn btn-warning btn-tone m-r-5" asp-area="Admin" asp-controller="AdminCategories" asp-action="Edit" asp-route-id="@item.CatId">Edit</a>
+                                                <a class="btn btn-info btn-tone m-r-5" asp-area="Admin" asp-controller="AdminCategories" asp-action="Details" asp-route-id="@item.CatId">Detail</a>
+                                                <a class="btn btn-danger btn-tone m-r-5" asp-area="Admin" asp-controller="AdminCategories" asp-action="Delete" asp-route-id="@item.CatId">Delete</a>
+
+                                            </td>
+
+                                        </tr>
+                                    }
+                                }
+
+                            </tbody>
+                        </table>
+                        <div aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <pager class="pager-container" list="@Model" asp-area="Admin" asp-controller="AdminCategories" asp-action="Index" />
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@*<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CatName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ParentId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Levels)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ordering)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Published)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Thumb)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Alias)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MetaDesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MetaKey)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cover)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SchemaMarkup)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CatName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParentId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Levels)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ordering)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Published)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Thumb)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Alias)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MetaDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MetaKey)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cover)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SchemaMarkup)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CatId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CatId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CatId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>*@

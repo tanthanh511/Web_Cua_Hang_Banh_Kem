@@ -17,7 +17,7 @@
     <hr />
     <div class="row">
         <div class="col-md-12">
-            <form asp-action="Edit">
+            <form asp-action="Edit" asp-route-id="@Model.PostId" method="post" enctype="multipart/form-data">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <input type="hidden" asp-for="PostId" />
                 <div class="form-group">
@@ -35,9 +35,10 @@
                     <input asp-for="Contents" class="form-control" />
                     <span asp-validation-for="Contents" class="text-danger"></span>
                 </div>
+                @*thêm ảnh đại diện*@
                 <div class="form-group">
-                    <label asp-for="Thumb" class="control-label"></label>
-                    <input asp-for="Thumb" class="form-control" />
+                    <label class="font-weight-semibold" for="productBrand">Ảnh đại diện</label>
+                    <input name="fThumb" type="file" class="form-control-file" asp-for="Thumb" />
                     <span asp-validation-for="Thumb" class="text-danger"></span>
                 </div>
                 <div class="form-group form-check">
@@ -75,16 +76,17 @@
                     <input asp-for="CatId" class="form-control" />
                     <span asp-validation-for="CatId" class="text-danger"></span>
                 </div>
-                <div class="form-group">
-                    <label asp-for="IsHot" class="control-label"></label>
-                    <input asp-for="IsHot" class="form-control" />
-                    <span asp-validation-for="IsHot" class="text-danger"></span>
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="IsHot" /> @Html.DisplayNameFor(model => model.IsHot)
+                    </label>
                 </div>
-                <div class="form-group">
-                    <label asp-for="IsNewfeed" class="control-label"></label>
-                    <input asp-for="IsNewfeed" class="form-control" />
-                    <span asp-validation-for="IsNewfeed" class="text-danger"></span>
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="IsNewfeed" /> @Html.DisplayNameFor(model => model.IsNewfeed)
+                    </label>
                 </div>
+          
                 <div class="form-group">
                     <label asp-for="MetaKey" class="control-label"></label>
                     <input asp-for="MetaKey" class="form-control" />
