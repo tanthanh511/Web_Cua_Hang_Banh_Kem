@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zAXI8Alc1C6Hc5EmOEONE/HppATNpKjzz1ipTvmhl+U=",
+  "Hash": "ItOW9owoS4S6kbfBbaTMNBJN+kPVwJKA3rZEpjltR/o=",
   "Source": "CakeShop",
   "BasePath": "_content/CakeShop",
   "Mode": "Default",
@@ -31992,6 +31992,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\pages\\hd-mua-hang.jpg"
+    },
+    {
+      "Identity": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\pages\\huong-dan-mua-hang.jpg",
+      "SourceId": "CakeShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\",
+      "BasePath": "_content/CakeShop",
+      "RelativePath": "images/pages/huong-dan-mua-hang.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\pages\\huong-dan-mua-hang.jpg"
     },
     {
       "Identity": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\pages\\thong-tin-lien-he.jpg",

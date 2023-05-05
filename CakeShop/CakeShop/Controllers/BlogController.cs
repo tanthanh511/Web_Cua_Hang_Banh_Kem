@@ -7,7 +7,8 @@ using PagedList.Core;
 namespace CakeShop.Controllers
 {
     public class BlogController : Controller
-    {        private readonly CuaHangBanhKemContext _context;
+    {       
+        private readonly CuaHangBanhKemContext _context;
 
         public BlogController(CuaHangBanhKemContext context)
         {
@@ -15,6 +16,7 @@ namespace CakeShop.Controllers
         }
 
         //GET: Blogs/Index
+        //link route thay controller and action
         [Route("blogs.html", Name = ("Blog"))]
         public IActionResult Index(int? page)
         {
@@ -52,10 +54,6 @@ namespace CakeShop.Controllers
             ViewBag.BaiVietLienQuan = lsBaiVietLienQuan;
             return View(tintuc);
         }
-        //public IActionResult Index()
-        //{
-
-        //    return View();
-        //}
+       
     }
 }
