@@ -1,0 +1,321 @@
+﻿@using PagedList.Core.Mvc
+@model PagedList.Core.IPagedList<CakeShop.Models.Product>
+@*@model IEnumerable<CakeShop.Models.Product>*@
+
+@{
+    int CurrentPage = ViewBag.CurrentPage;
+    ViewData["Title"] = "Quản lí sản phẩm - page: " + CurrentPage;
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-md-10 text-center">
+
+    <h1>Quản lí sản phẩm - page: @CurrentPage</h1>
+    <p>
+        <a class="btn btn-info btn-tone" asp-action="Create">Create New</a>
+    </p>
+
+
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row m-b-30">
+                    <div class="col-lg-12">
+                        <div class="d-md-flex" style="padding-bottom: 87px;">
+
+                            <div class="m-b-10 m-r-15">
+                                <select class="custom-select" id="txtCatID" name="txtCatID" style="min-width:200px;" asp-items="ViewBag.DanhMuc">
+                                    <option selected>Chọn danh mục</option>
+                                    <option value="all">All</option>
+                                </select>
+                            </div>
+
+                            <div class="m-b-10" style="margin-left: 35px;">
+                               <div class="input-affix m-v-10">
+                                   <i class="prefix-icon anticon anticon-search opacity-04"></i>
+                                    <input id="keyword" name="keyword" type="text" class="form-control" placeholder="Search" />
+                               </div>
+
+                    
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="table-responsive ">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Category</th>
+                                    <th>Price</th>
+                                    <th>Units in stock</th>
+                                    <th>Active</th>
+                                    <th>#</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="records_table">
+                                @if (Model != null)
+                                {
+                                    foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.ProductId</td>
+                                            <td>@item.ProductName</td>
+                                            <td>@item.Cat.CatName</td>
+                                            <td>@item.Price.Value.ToString("#,##0") VND</td>
+                                            <td>@item.UnitslnStock</td>
+
+                                            <td>
+                                                @if (item.UnitslnStock.Value>0)
+                                                {
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="badge badge-success badge-dot m-r-10"></div>
+                                                        <div>In stock</div>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div class="d-flex align-item-center">
+                                                        <div class="badge badge-success badge-dot m-r-10"></div>
+                                                        <div>Out stock</div>
+                                                    </div>
+                                                }
+                                            </td>
+
+                                            @*<td>
+                                                @if (item.Active)
+                                                {
+                                                    <div class="d-flex align-item-center">
+                                                        <div class="badge badge-success badge-dot m-r-10"></div>
+                                                        <div>Active</div>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div class="d-flex align-item-center">
+                                                        <div class="badge badge-success badge-dot m-r-10"></div>
+                                                        <div>Block</div>
+                                                    </div>
+                                                }
+                                            </td>*@
+
+                                            <td class="text-right">
+                                                <a class="btn btn-warning btn-tone m-r-5" asp-area="Admin" asp-controller="AdminProducts" asp-action="Edit" asp-route-id="@item.ProductId">Edit</a>
+                                                <a class="btn btn-info btn-tone m-r-5" asp-area="Admin" asp-controller="AdminProducts" asp-action="Details" asp-route-id="@item.ProductId">Detail</a>
+                                                <a class="btn btn-danger btn-tone m-r-5" asp-area="Admin" asp-controller="AdminProducts" asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+
+                                            </td>
+
+                                        </tr>
+                                    }
+                                }
+
+                            </tbody>
+                        </table>
+                        <div aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <pager class="pager-container" list="@Model" asp-area="Admin" asp-controller="AdminProducts" asp-route-CatID="@ViewBag.CurrentCateID" asp-action="Index" />
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            //load combobox
+            jQuery("#txtCatID").change(function () {
+                var catID = jQuery(this).children(":selected").attr("value");
+                catID = parseFloat(catID);
+                $('#txtCatID option')
+                    .removeAttr('selected');
+                $("txtCatID > [value="+catID +"]").attr("selected" ,"true");
+
+                $.ajax({
+                    url: '/Admin/AdminProducts/Filtter',
+                    datatype: "json",
+                    type :"GET",
+                    data: {
+                        CatID: catID    
+                    },
+                    async: true,
+                    
+                    success: function (results){
+                        if(results.status == "success"){
+                            window.location.href = results.redirecUrl;
+                        }
+                    },
+                    error: function (xhr) {
+                        alert('error');
+                    }
+                });
+            });
+
+            //Search
+            $("#keyword").keyup(function () {
+                var strkeyword = $('#keyword').val();
+                $.ajax({
+                    url: '/Admin/Search/FindProduct/',
+                    datatype: "json",
+                    type: "POST",
+                    data: { keyword: strkeyword },
+                    async: true,
+                    success: function (results) {
+                        $("#records_table").html("");
+                        $("#records_table").html(results);
+                    },
+                    error: function (xhr) {
+                        alert('error');
+                    }
+                });
+            });
+        });
+    </script>
+}
+
+
+@*<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShortDesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Discount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Thumb)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Video)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateCreated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateModified)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BestSellers)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HomeFlag)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Active)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tags)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Alias)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MetaDesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MetaKey)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitslnStock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cat)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShortDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Discount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Thumb)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Video)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateCreated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateModified)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BestSellers)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HomeFlag)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Active)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tags)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Alias)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MetaDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MetaKey)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitslnStock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cat.CatId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>*@

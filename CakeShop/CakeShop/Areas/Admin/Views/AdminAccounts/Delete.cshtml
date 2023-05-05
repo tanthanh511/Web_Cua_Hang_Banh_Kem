@@ -5,12 +5,16 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>Delete</h1>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Account</h4>
-    <hr />
+<div class="col-md-10">
+    <div class="text-center">
+        @* <h1>Edit</h1>*@
+        <div class="d-inline-flex align-items-center text-black">
+            <h4 class="m-0"><a class="text-success" asp-area="Admin" asp-controller="AdminProducts" asp-action="Index">Products</a></h4>
+            <i class="fa fa-circle px-3"></i>
+            <h4 class="m-0">Delete</h4>
+        </div>
+        <h3>Are you sure you want to delete this?</h3>
+    </div>
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Phone)
@@ -71,6 +75,6 @@
     <form asp-action="Delete">
         <input type="hidden" asp-for="AccountId" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <a class="btn btn-info btn-tone" asp-action="Index">Back to List</a>
     </form>
 </div>

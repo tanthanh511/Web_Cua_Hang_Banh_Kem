@@ -1,0 +1,40 @@
+﻿@model List<Product>
+
+
+@if (Model != null)
+{
+    foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ProductId</td>
+            <td>@item.ProductName</td>
+            <td>@item.Cat.CatName</td>
+            <td>@item.Price.Value.ToString("#,##0") VND</td>
+            <td>@item.UnitslnStock</td>
+
+            <td>
+                @if (item.UnitslnStock.Value > 0)
+                {
+                    <div class="d-flex align-items-center">
+                        <div class="badge badge-success badge-dot m-r-10"></div>
+                        <div>In stock</div>
+                    </div>
+                }
+                else
+                {
+                    <div class="d-flex align-item-center">
+                        <div class="badge badge-success badge-dot m-r-10"></div>
+                        <div>Out stock</div>
+                    </div>
+                }
+            </td>
+            <td class="text-right">
+                <a class="btn btn-warning btn-tone m-r-5" asp-area="Admin" asp-controller="AdminProducts" asp-action="Edit" asp-route-id="@item.ProductId">Edit</a>
+                <a class="btn btn-info btn-tone m-r-5" asp-area="Admin" asp-controller="AdminProducts" asp-action="Details" asp-route-id="@item.ProductId">Detail</a>
+                <a class="btn btn-danger btn-tone m-r-5" asp-area="Admin" asp-controller="AdminProducts" asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+
+            </td>
+
+        </tr>
+    }
+}

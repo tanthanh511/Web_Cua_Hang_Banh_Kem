@@ -1,0 +1,121 @@
+﻿@using PagedList.Core.Mvc
+@model PagedList.Core.IPagedList<CakeShop.Models.TblTinTuc>
+
+@{
+    int CurrentPage = ViewBag.CurrentPage;
+    ViewData["Title"] = "Danh sách tin tức" + CurrentPage;
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="col-md-10 text-center">
+
+    <h1>Danh sách tin tức : page @CurrentPage</h1>
+    <p>
+        <a class="btn btn-info btn-tone" asp-action="Create">Create New</a>
+    </p>
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row m-b-30">
+
+
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Title</th>
+                                    <th>Ngày tạo</th>
+                                    <th>Hot</th>
+                                    <th>New Feed</th>
+                                    <th>Active</th>
+                                    <th>#</th>
+                                   
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @if (Model != null)
+                                {
+                                    foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.PostId</td>
+                                            <td>@item.Title</td>
+                                            <td>@item.CreatedDate</td>
+                                            <td>
+                                                @if (item.IsHot == true)
+                                                {
+                                                    <div >
+                                                        
+                                                        <div>Hot</div>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div>
+                                                        
+                                                        <div>0</div>
+                                                    </div>
+                                                }
+                                            </td>
+
+                                            <td>
+                                                @if (item.IsNewfeed == true)
+                                                {
+                                                    <div>
+                                                        
+                                                        <div>Newfeed</div>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div>
+                                                       
+                                                        <div>0</div>
+                                                    </div>
+                                                }
+                                            </td>
+                                            <td >
+                                                @if (item.Published == true)
+                                                {
+                                                    <div >
+                                                        
+                                                        <div>Public</div>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div>
+                                                       
+                                                        <div>Non-Public</div>
+                                                    </div>
+                                                }
+                                            </td>
+                                         
+
+                                            <td class="text-right">
+                                                <a class="btn btn-warning btn-tone m-r-5" asp-area="Admin" asp-controller="AdminTblTinTucs" asp-action="Edit" asp-route-id="@item.PostId">Edit</a>
+                                                <a class="btn btn-info btn-tone m-r-5" asp-area="Admin" asp-controller="AdminTblTinTucs" asp-action="Details" asp-route-id="@item.PostId">Detail</a>
+                                                <a class="btn btn-danger btn-tone m-r-5" asp-area="Admin" asp-controller="AdminTblTinTucs" asp-action="Delete" asp-route-id="@item.PostId">Delete</a>
+
+                                            </td>
+
+                                        </tr>
+                                    }
+                                }
+
+                            </tbody>
+                        </table>
+                        <div aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <pager class="pager-container" list="@Model" asp-area="Admin" asp-controller="AdminTblTinTucs" asp-action="Index" />
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
