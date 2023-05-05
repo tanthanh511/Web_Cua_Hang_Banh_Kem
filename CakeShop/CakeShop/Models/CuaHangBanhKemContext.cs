@@ -64,6 +64,10 @@ public partial class CuaHangBanhKemContext : DbContext
             entity.Property(e => e.Salt)
                 .HasMaxLength(10)
                 .IsFixedLength();
+
+            entity.HasOne(d => d.Role).WithMany(p => p.Accounts)
+                .HasForeignKey(d => d.RoleId)
+                .HasConstraintName("FK_Accounts_Roles");
         });
 
         modelBuilder.Entity<Attribute>(entity =>
@@ -81,6 +85,14 @@ public partial class CuaHangBanhKemContext : DbContext
             entity.Property(e => e.AttributesPricesId).HasColumnName("AttributesPricesID");
             entity.Property(e => e.AttributeId).HasColumnName("AttributeID");
             entity.Property(e => e.ProductId).HasColumnName("ProductID");
+
+            entity.HasOne(d => d.Attribute).WithMany(p => p.AttributesPrices)
+                .HasForeignKey(d => d.AttributeId)
+                .HasConstraintName("FK_AttributesPrices_Attributes");
+
+            entity.HasOne(d => d.Product).WithMany(p => p.AttributesPrices)
+                .HasForeignKey(d => d.ProductId)
+                .HasConstraintName("FK_AttributesPrices_Products");
         });
 
         modelBuilder.Entity<Category>(entity =>
@@ -120,6 +132,10 @@ public partial class CuaHangBanhKemContext : DbContext
             entity.Property(e => e.Salt)
                 .HasMaxLength(8)
                 .IsFixedLength();
+
+            entity.HasOne(d => d.Location).WithMany(p => p.Customers)
+                .HasForeignKey(d => d.LocationId)
+                .HasConstraintName("FK_Customer_Location");
         });
 
         modelBuilder.Entity<Location>(entity =>
@@ -145,6 +161,14 @@ public partial class CuaHangBanhKemContext : DbContext
             entity.Property(e => e.PaymentId).HasColumnName("PaymentID");
             entity.Property(e => e.ShipDate).HasColumnType("datetime");
             entity.Property(e => e.TransactStatusId).HasColumnName("TransactStatusID");
+
+            entity.HasOne(d => d.Customer).WithMany(p => p.Orders)
+                .HasForeignKey(d => d.CustomerId)
+                .HasConstraintName("FK_Order_Customer");
+
+            entity.HasOne(d => d.TransactStatus).WithMany(p => p.Orders)
+                .HasForeignKey(d => d.TransactStatusId)
+                .HasConstraintName("FK_Order_TransactStatus");
         });
 
         modelBuilder.Entity<OrderDetail>(entity =>
@@ -155,6 +179,10 @@ public partial class CuaHangBanhKemContext : DbContext
             entity.Property(e => e.OrderId).HasColumnName("OrderID");
             entity.Property(e => e.ProductId).HasColumnName("ProductID");
             entity.Property(e => e.ShipDate).HasColumnType("datetime");
+
+            entity.HasOne(d => d.Order).WithMany(p => p.OrderDetails)
+                .HasForeignKey(d => d.OrderId)
+                .HasConstraintName("FK_OrderDetail_Order");
         });
 
         modelBuilder.Entity<Page>(entity =>
@@ -183,6 +211,10 @@ public partial class CuaHangBanhKemContext : DbContext
             entity.Property(e => e.Thumb).HasMaxLength(250);
             entity.Property(e => e.Title).HasMaxLength(250);
             entity.Property(e => e.Video).HasMaxLength(250);
+
+            entity.HasOne(d => d.Cat).WithMany(p => p.Products)
+                .HasForeignKey(d => d.CatId)
+                .HasConstraintName("FK_Products_Categories");
         });
 
         modelBuilder.Entity<Role>(entity =>

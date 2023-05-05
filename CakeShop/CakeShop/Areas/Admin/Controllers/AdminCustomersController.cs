@@ -25,7 +25,10 @@ namespace CakeShop.Areas.Admin.Controllers
         {
             var pageNumber = page == null || page <= 0 ? 1 : page.Value;
             var pageSize = 5;
-            var lsCustomers = _context.Customers.AsNoTracking().OrderByDescending(x => x.CreateDate);
+            var lsCustomers = _context.Customers
+                .AsNoTracking()
+                .Include(x=>x.Location)
+                .OrderByDescending(x => x.CreateDate);
 
             PagedList<Customer> models = new PagedList<Customer>(lsCustomers, pageNumber,pageSize);
             ViewBag.CurrentPage = pageNumber;

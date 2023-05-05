@@ -16,9 +16,10 @@ namespace CakeShop.Areas.Admin.Controllers
         private readonly CuaHangBanhKemContext _context;
         public INotyfService _notifyService { get; }
 
-        public AdminRolesController(CuaHangBanhKemContext context)
+        public AdminRolesController(CuaHangBanhKemContext context, INotyfService notyfService)
         {
             _context = context;
+            _notifyService = notyfService;
         }
 
         // GET: Admin/AdminRoles

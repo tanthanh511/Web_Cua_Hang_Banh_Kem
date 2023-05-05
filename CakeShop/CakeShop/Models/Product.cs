@@ -44,4 +44,8 @@ public partial class Product
     public string? MetaKey { get; set; }
 
     public int? UnitslnStock { get; set; }
+
+    public virtual ICollection<AttributesPrice> AttributesPrices { get; set; } = new List<AttributesPrice>();
+
+    public virtual Category? Cat { get; set; }
 }

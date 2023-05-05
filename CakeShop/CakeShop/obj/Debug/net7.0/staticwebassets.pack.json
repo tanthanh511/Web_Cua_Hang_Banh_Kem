@@ -7949,6 +7949,102 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\category\\banh-kem-thom-ngon.jpg",
+      "PackagePath": "staticwebassets\\images\\category\\banh-kem-thom-ngon.jpg"
+    },
+    {
+      "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\category\\banh-kem-tuoi.jpg",
+      "PackagePath": "staticwebassets\\images\\category\\banh-kem-tuoi.jpg"
+    },
+    {
+      "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\category\\banh-que-thom-ngon.jpg",
+      "PackagePath": "staticwebassets\\images\\category\\banh-que-thom-ngon.jpg"
+    },
+    {
+      "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\category\\banh-que.jpg",
+      "PackagePath": "staticwebassets\\images\\category\\banh-que.jpg"
+    },
+    {
+      "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\category\\qaaaa.jpg",
+      "PackagePath": "staticwebassets\\images\\category\\qaaaa.jpg"
+    },
+    {
+      "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\news\\aaaa.jpg",
+      "PackagePath": "staticwebassets\\images\\news\\aaaa.jpg"
+    },
+    {
+      "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\news\\bbbb.jpg",
+      "PackagePath": "staticwebassets\\images\\news\\bbbb.jpg"
+    },
+    {
+      "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\news\\ccccc.jpg",
+      "PackagePath": "staticwebassets\\images\\news\\ccccc.jpg"
+    },
+    {
+      "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\news\\ddddd.jpg",
+      "PackagePath": "staticwebassets\\images\\news\\ddddd.jpg"
+    },
+    {
+      "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\news\\qaaaa.jpg",
+      "PackagePath": "staticwebassets\\images\\news\\qaaaa.jpg"
+    },
+    {
+      "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\pages\\aa.jpg",
+      "PackagePath": "staticwebassets\\images\\pages\\aa.jpg"
+    },
+    {
+      "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\pages\\aaaa.jpg",
+      "PackagePath": "staticwebassets\\images\\pages\\aaaa.jpg"
+    },
+    {
+      "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\pages\\aabb.jpg",
+      "PackagePath": "staticwebassets\\images\\pages\\aabb.jpg"
+    },
+    {
+      "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\pages\\aabbb.jpg",
+      "PackagePath": "staticwebassets\\images\\pages\\aabbb.jpg"
+    },
+    {
+      "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\pages\\asss.jpg",
+      "PackagePath": "staticwebassets\\images\\pages\\asss.jpg"
+    },
+    {
+      "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\pages\\gioi-thieu.jpg",
+      "PackagePath": "staticwebassets\\images\\pages\\gioi-thieu.jpg"
+    },
+    {
+      "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\pages\\hd-mua-hang.jpg",
+      "PackagePath": "staticwebassets\\images\\pages\\hd-mua-hang.jpg"
+    },
+    {
+      "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\pages\\huong-dan-mua-hang.jpg",
+      "PackagePath": "staticwebassets\\images\\pages\\huong-dan-mua-hang.jpg"
+    },
+    {
+      "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\pages\\thong-tin-lien-he.jpg",
+      "PackagePath": "staticwebassets\\images\\pages\\thong-tin-lien-he.jpg"
+    },
+    {
+      "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\products\\addd.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\addd.jpg"
+    },
+    {
+      "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\products\\banh-mi-sanwich-aaaa.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\banh-mi-sanwich-aaaa.jpg"
+    },
+    {
+      "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\products\\banh-mi-sanwich.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\banh-mi-sanwich.jpg"
+    },
+    {
+      "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\products\\bbbbb.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\bbbbb.jpg"
+    },
+    {
+      "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\products\\dddd.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\dddd.jpg"
+    },
+    {
       "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
