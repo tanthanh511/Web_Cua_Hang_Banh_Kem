@@ -44,21 +44,21 @@
                                             <td>
                                                 @if (item.Published == true)
                                                 {
-                                                    <div class="d-flex align-item-center">
+                                                    <div>
                                                         <div class="badge badge-success badge-dot m-r-10"></div>
                                                         <div>Public</div>
                                                     </div>
                                                 }
                                                 else
                                                 {
-                                                    <div class="d-flex align-item-center">
+                                                    <div>
                                                         <div class="badge badge-success badge-dot m-r-10"></div>
                                                         <div>Non-Public</div>
                                                     </div>
                                                 }
                                             </td>
 
-                                            <td class="text-right">
+                                            <td >
                                                 <a class="btn btn-warning btn-tone m-r-5" asp-area="Admin" asp-controller="AdminPages" asp-action="Edit" asp-route-id="@item.PageId">Edit</a>
                                                 <a class="btn btn-info btn-tone m-r-5" asp-area="Admin" asp-controller="AdminPages" asp-action="Details" asp-route-id="@item.PageId">Detail</a>
                                                 <a class="btn btn-danger btn-tone m-r-5" asp-area="Admin" asp-controller="AdminPages" asp-action="Delete" asp-route-id="@item.PageId">Delete</a>

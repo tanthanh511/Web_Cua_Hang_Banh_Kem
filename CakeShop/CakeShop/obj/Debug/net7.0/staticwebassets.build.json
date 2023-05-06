@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fZgllp9HOVXczvAx1s57B8fEfenie+Dx1eHVtpjjq2o=",
+  "Hash": "m/rFKveOQQOawuhxTZrQvlFSekcAcXjExAdkadFWj4w=",
   "Source": "CakeShop",
   "BasePath": "_content/CakeShop",
   "Mode": "Default",
@@ -34406,6 +34406,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Userasset\\img\\logo.png"
+    },
+    {
+      "Identity": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\Userasset\\img\\member.png",
+      "SourceId": "CakeShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\",
+      "BasePath": "_content/CakeShop",
+      "RelativePath": "Userasset/img/member.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Userasset\\img\\member.png"
     },
     {
       "Identity": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\Userasset\\img\\payment-item.png",

@@ -297,6 +297,10 @@
       "PackagePath": "staticwebassets\\Userasset\\img\\logo.png"
     },
     {
+      "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\Userasset\\img\\member.png",
+      "PackagePath": "staticwebassets\\Userasset\\img\\member.png"
+    },
+    {
       "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\Userasset\\img\\payment-item.png",
       "PackagePath": "staticwebassets\\Userasset\\img\\payment-item.png"
     },

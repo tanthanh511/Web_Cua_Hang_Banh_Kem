@@ -38,30 +38,30 @@ namespace CakeShop.Controllers
 
         }
 
-        [Route("/{Alias}-{id}", Name = "ListProduct")]
-        public IActionResult List(int id, int page= 1)
-        {
-            try
-            {
-                var pageSize = 10;
-                var danhmuc = _context.Categories.Find(id);
-                var lsProduct = _context.Products
-                    .AsNoTracking()
-                    .Where(x => x.CatId == id)
-                    .OrderByDescending(x => x.DateCreated);
+        //[Route("/{Alias}", Name = "ListProduct")]
+        //public IActionResult ListProduct(string Alias, int page= 1)
+        //{
+        //    try
+        //    {
+        //        var pageSize = 10;
+        //        var danhmuc = _context.Categories.AsNoTracking().SingleOrDefault(x=>x.Alias == Alias);
+        //        var lsProduct = _context.Products
+        //            .AsNoTracking()
+        //            .Where(x => x.CatId == danhmuc.CatId)
+        //            .OrderByDescending(x => x.DateCreated);
 
-                PagedList<Product> models = new PagedList<Product>(lsProduct, page, pageSize);
-                ViewBag.CurrentPage = page;
-                ViewBag.CurrentCat = danhmuc;
-                return View(models);
-            }
-            catch 
-            {
-                return RedirectToAction("Index", "Home");
-            }
+        //        PagedList<Product> models = new PagedList<Product>(lsProduct, page, pageSize);
+        //        ViewBag.CurrentPage = page;
+        //        ViewBag.CurrentCat = danhmuc;
+        //        return View(models);
+        //    }
+        //    catch 
+        //    {
+        //        return RedirectToAction("Index", "Home");
+        //    }
        
 
-        }
+        //}
 
         [Route("/{Alias}-{id}.html", Name = "ProductDetails")]
         public IActionResult Detail(int id)
@@ -73,6 +73,13 @@ namespace CakeShop.Controllers
                 {
                     return RedirectToAction("Index");
                 }
+                var lsProduct = _context.Products
+                   .AsNoTracking()
+                   .Where(x => x.CatId == product.CatId && x.ProductId != id && x.Active == true)
+                   .OrderByDescending(x => x.DateCreated)
+                   .Take(3)
+                   .ToList();
+                ViewBag.SanPham = lsProduct;
                 return View(product);
             }
             catch 

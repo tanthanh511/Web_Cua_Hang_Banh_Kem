@@ -6,10 +6,10 @@
     </div>
     <div class="humberger__menu__cart">
         <ul>
-            <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+           
             <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
         </ul>
-        <div class="header__cart__price">item: <span>$15.00</span></div>
+       
     </div>
     <div class="humberger__menu__widget">
         <div class="header__top__right__language">
@@ -22,27 +22,21 @@
             </ul>
         </div>
         <div class="header__top__right__auth">
-            <a href="#"><i class="fa fa-user"></i> Login</a>
+            <a asp-area="Admin" asp-controller="Home" asp-action="Index"><i class="fa fa-user"></i> Login</a>
         </div>
     </div>
     <nav class="humberger__menu__nav mobile-menu">
         <ul>
 
-            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Home</a></li>
 
-            <li><a href="/">Shop</a></li>
+            <li><a asp-controller="Product" asp-action="Index">Shop</a></li>
 
-            <li>
-                <a href="#">Pages</a>
-                <ul class="header__menu__dropdown">
-                    <li><a href="./shop-details.html">Shop Details</a></li>
-                    <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                    <li><a href="./checkout.html">Check Out</a></li>
-                    <li><a href="./blog-details.html">Blog Details</a></li>
-                </ul>
-            </li>
+            <li> <a href="/page/huong-dan-mua-hang">Shopping guide</a></li>
 
-            <li><a href="./blog.html">Blog</a></li>
+            <li><a asp-controller="Blog" asp-action="Index">Blog</a></li>
+
+            <li><a asp-controller="Home" asp-action="About">About</a></li>
 
             <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
 
@@ -67,6 +61,8 @@
 
 <!--Header-->
 <header class="header">
+
+    <!--header top-->
     <div class="header__top">
         <div class="container">
             <div class="row">
@@ -96,13 +92,15 @@
                             </ul>
                         </div>
                         <div class="header__top__right__auth">
-                            <a href="#"><i class="fa fa-user"></i> Login</a>
+                            <a asp-area="Admin" asp-controller="Home" asp-action="Index"><i class="fa fa-user"></i> Login</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!--body-->
     <div class="container">
         <div class="row">
             <div class="col-lg-2">
@@ -110,7 +108,8 @@
                     <a href="/"><img src="~/Userasset/img/cake_logo.png" alt="banh" style="width: 100px;"></a>
                 </div>
             </div>
-            <div class="col-lg-7">
+            <!--menu-->
+            <div class="col-lg-9">
                 <nav class="header__menu">
                     <ul>
                         <li><a asp-controller="Home" asp-action="Index">Home</a></li>
@@ -134,17 +133,17 @@
 
                         <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
 
-                        <li><a asp-area="Admin" asp-controller="Home" asp-action="Index">Admin</a></li>
+                        
                     </ul>
                 </nav>
             </div>
-            <div class="col-lg-3">
+
+            <!--cart-->
+            <div class="col-lg-1">
                 <div class="header__cart">
-                    <ul>
-                        <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+                    <ul>                      
                         <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                     </ul>
-                    <div class="header__cart__price">item: <span>$150.00</span></div>
                 </div>
             </div>
         </div>

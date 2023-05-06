@@ -38,9 +38,6 @@ namespace CakeShop.Areas.Admin.Controllers
                 return PartialView("ListProductsSearchPartial", ls);
             }
         }
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
+       
     }
 }

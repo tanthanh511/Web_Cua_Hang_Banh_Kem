@@ -57,12 +57,7 @@ namespace CakeShop.Areas.Admin.Controllers
             return View(models);
         }
 
-        //public async Task<IActionResult> Index()
-        //{
-        //      return _context.TblTinTucs != null ? 
-        //                  View(await _context.TblTinTucs.ToListAsync()) :
-        //                  Problem("Entity set 'CuaHangBanhKemContext.TblTinTucs'  is null.");
-        //}
+       
 
         // GET: Admin/AdminTblTinTucs/Details/5
         public async Task<IActionResult> Details(int? id)

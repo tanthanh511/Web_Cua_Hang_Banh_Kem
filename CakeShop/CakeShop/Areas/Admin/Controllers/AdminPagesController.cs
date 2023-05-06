@@ -43,12 +43,6 @@ namespace CakeShop.Areas.Admin.Controllers
 
 
 
-        //public async Task<IActionResult> Index()
-        //{
-        //      return _context.Pages != null ? 
-        //                  View(await _context.Pages.ToListAsync()) :
-        //                  Problem("Entity set 'CuaHangBanhKemContext.Pages'  is null.");
-        //}
 
         // GET: Admin/AdminPages/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -75,8 +69,7 @@ namespace CakeShop.Areas.Admin.Controllers
         }
 
         // POST: Admin/AdminPages/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("PageId,PageName,Contents,Thumb,Published,Title,MetaDesc,MetaKey,Alias,CreatedDate,Ordering")] Page page, Microsoft.AspNetCore.Http.IFormFile fThumb)
@@ -118,8 +111,7 @@ namespace CakeShop.Areas.Admin.Controllers
         }
 
         // POST: Admin/AdminPages/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("PageId,PageName,Contents,Thumb,Published,Title,MetaDesc,MetaKey,Alias,CreatedDate,Ordering")] Page page, Microsoft.AspNetCore.Http.IFormFile fThumb)
