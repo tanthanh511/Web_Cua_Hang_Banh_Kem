@@ -1,0 +1,27 @@
+﻿@model List<Product>
+@if (Model != null && Model.Count() > 0)
+{
+    foreach (var item in Model)
+    {
+
+        string url = $"/{item.Alias}-{item.ProductId}.html";
+        <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="product__item">
+                <div class="product__item__pic set-bg">
+                    <a href="@url">
+                        <img class="img" src="~/images/products/@item.Thumb" alt="@item.Title">
+                    </a>
+                    <ul class="product__item__pic__hover">
+                        <li><a href="@url"><i class="fa fa-heart"></i></a></li>
+                        <li><a href="@url"><i class="fa fa-retweet"></i></a></li>
+                        <li><a href="@url"><i class="fa fa-shopping-cart"></i></a></li>
+                    </ul>
+                </div>
+                <div class="product__item__text">
+                    <h6><a href="@url">@item.ProductName</a></h6>
+                    <h5>@item.Price VND</h5>
+                </div>
+            </div>
+        </div>
+    }
+}

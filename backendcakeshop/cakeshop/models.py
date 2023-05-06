@@ -120,16 +120,16 @@ class Order(models.Model):
      paid = models.BooleanField(default=False)
      paymentid = models.IntegerField(null=True)
      paymentdate = models.DateField(null=True)
+     grand_total =  models.FloatField(default=100.00)
      note = models.TextField()
      def __str__(self) -> str:
         return self.customer.name
 
 class OrderDetail(models.Model):
-      order = models.ForeignKey(Order, on_delete= models.CASCADE)
-      products = models.ForeignKey(Products, on_delete= models.CASCADE)
-      ordernumber = models.IntegerField()
+      order = models.ForeignKey(Order, on_delete= models.CASCADE, related_name="items", null=True, blank=True,)
+      products = models.ForeignKey(Products, on_delete= models.CASCADE, blank=True, null=True, related_name="oderitems",)
       quantity = models.IntegerField()
-      total = models.FloatField(default=100.00)
+      sub_total = models.FloatField(default=100.00)
       def __str__(self) -> str:
         return self.products.name
 
