@@ -5,12 +5,18 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>Create</h1>
 
-<h4>Customer</h4>
-<hr />
+<div class="col-md-10 ">
+    <div class="text-center">
+        <div class="d-inline-flex align-items-center text-black">
+            <h4 class="m-0"><a class="text-success" asp-area="Admin" asp-controller="AdminCustomers" asp-action="Index">Customer</a></h4>
+            <i class="fa fa-circle px-3"></i>
+            <h4 class="m-0">Create</h4>
+        </div>
+    </div>
+    <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-12">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">

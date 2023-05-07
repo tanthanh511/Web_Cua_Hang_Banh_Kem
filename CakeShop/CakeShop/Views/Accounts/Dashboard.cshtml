@@ -1,0 +1,108 @@
+﻿@model CakeShop.Models.Customer
+
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<hr />
+<div class="col-md-12 ">
+    <div class="mx-auto">
+        <h4 class="m-0">Detail</h4>
+    </div>
+    
+
+    <div >
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.FullName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.FullName)
+            </dd>
+            @*<dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Birthday)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Birthday)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Avatar)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Avatar)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Address)
+            </dd>*@
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Phone)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Phone)
+            </dd>
+            @*<dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.District)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.District)
+            </dd>*@
+            @*<dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Ward)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Ward)
+            </dd>*@
+           @* <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.CreateDate)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CreateDate)
+            </dd>*@
+            @*<dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Password)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Password)
+            </dd>*@
+         @*   <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Salt)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Salt)
+            </dd>*@
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.LastLogin)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.LastLogin)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Active)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Active)
+            </dd>
+            @*<dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Location)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Location.LocationId)
+            </dd>*@
+        </dl>
+    </div>
+    <div>
+        <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model.CustomerId">Edit</a> |
+        <a class="btn btn-info btn-tone" asp-controller="Home" asp-action="Index">Back to List</a> |
+        <a class="btn btn-danger" href="/dang-xuat.html">Logout</a>
+    </div>
+</div>

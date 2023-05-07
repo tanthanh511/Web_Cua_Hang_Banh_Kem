@@ -23,22 +23,7 @@
                 <div class="row m-b-30">
                     <div class="col-lg-12">
                         <div class="d-md-flex" style="padding-bottom: 87px;">
-                            <div class="m-b-10 m-r-15">
-
-                                <select class="custom-select" id="idrole" name="idrole" style="min-width:200px;" asp-items="ViewBag.QuyenTruyCap">
-                                    <option value="0" disabled selected>Chọn quyền truy cập</option>
-                                </select>
-
-                                @*<select class="custom-select" style="min-width:180px;">
-                                <option selected>Tai khoan</option>
-                                <option value="all">All</option>
-                                <option value="all">All</option>
-                                <option value="all">All</option>
-                                </select>*@
-                            </div>
-
                             <div class="m-b-10">
-
                                 <select class="custom-select" id="idstatus" name="idstatus" style="min-width:200px;" asp-items="ViewBag.lsTrangThai">
                                     <option value="" disabled selected>Chọn trạng thái</option>
                                 </select>
@@ -52,8 +37,10 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>FullName</th>
-                                    <th>Address</th>
-                                    <th>Province</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
+                                    <th>Active</th>
+                                    <th>#</th>
                                 </tr>
                             </thead>
 
@@ -64,27 +51,25 @@
                                     {
                                         <tr>
                                             <td>@item.CustomerId</td>
-                                            <td>
-                                                <p>@item.FullName</p>
-                                                <p>@item.Phone</p>
-                                                <p>@item.Email</p>
-                                            </td>
-                                            <td>@item.Address</td>
-                                            <td>@item.Location.Name</td>
+                                            <td> @item.FullName</td>
+                                            <td>@item.Phone</td>
+                                            <td>@item.Email</td>
+                                           
+                                           @* <td>@item.Location.Name</td>*@
                                          
                                           @*  <td>@item.RoleId</td>*@
 
                                             <td>
                                                 @if (item.Active)
                                                 {
-                                                    <div class="d-flex align-item-center">
+                                                    <div >
                                                         <div class="badge badge-success badge-dot m-r-10"></div>
                                                         <div>Active</div>
                                                     </div>
                                                 }
                                                 else
                                                 {
-                                                    <div class="d-flex align-item-center">
+                                                    <div>
                                                         <div class="badge badge-success badge-dot m-r-10"></div>
                                                         <div>Block</div>
                                                     </div>

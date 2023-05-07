@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using CakeShop.ModelViews;
 
 namespace CakeShop.Models;
 
@@ -270,4 +271,8 @@ public partial class CuaHangBanhKemContext : DbContext
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
+    public DbSet<CakeShop.ModelViews.RegisterVM> RegisterVM { get; set; } = default!;
+
+    public DbSet<CakeShop.ModelViews.LoginViewModel> LoginViewModel { get; set; } = default!;
 }

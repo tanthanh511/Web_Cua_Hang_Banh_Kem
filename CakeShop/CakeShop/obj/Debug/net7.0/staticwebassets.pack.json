@@ -7961,12 +7961,28 @@
       "PackagePath": "staticwebassets\\images\\category\\banh-kem-tuoi.jpg"
     },
     {
+      "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\category\\banh-kem.jpg",
+      "PackagePath": "staticwebassets\\images\\category\\banh-kem.jpg"
+    },
+    {
+      "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\category\\banh-mi.jpg",
+      "PackagePath": "staticwebassets\\images\\category\\banh-mi.jpg"
+    },
+    {
       "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\category\\banh-que-thom-ngon.jpg",
       "PackagePath": "staticwebassets\\images\\category\\banh-que-thom-ngon.jpg"
     },
     {
+      "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\category\\banh-que-thom.jpg",
+      "PackagePath": "staticwebassets\\images\\category\\banh-que-thom.jpg"
+    },
+    {
       "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\category\\banh-que.jpg",
       "PackagePath": "staticwebassets\\images\\category\\banh-que.jpg"
+    },
+    {
+      "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\category\\mini-cake.jpg",
+      "PackagePath": "staticwebassets\\images\\category\\mini-cake.jpg"
     },
     {
       "Id": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\category\\qaaaa.jpg",

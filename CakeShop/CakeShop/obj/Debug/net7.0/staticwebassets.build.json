@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "m/rFKveOQQOawuhxTZrQvlFSekcAcXjExAdkadFWj4w=",
+  "Hash": "1BSu2ykUO3EMZjhuRasobiAF9w/yPYemA9IAEbVmuKk=",
   "Source": "CakeShop",
   "BasePath": "_content/CakeShop",
   "Mode": "Default",
@@ -31705,6 +31705,23 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\category\\banh-kem.jpg",
+      "SourceId": "CakeShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\",
+      "BasePath": "_content/CakeShop",
+      "RelativePath": "images/category/banh-kem.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\category\\banh-kem.jpg"
+    },
+    {
       "Identity": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\category\\banh-kem-thom-ngon.jpg",
       "SourceId": "CakeShop",
       "SourceType": "Discovered",
@@ -31739,6 +31756,23 @@
       "OriginalItemSpec": "wwwroot\\images\\category\\banh-kem-tuoi.jpg"
     },
     {
+      "Identity": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\category\\banh-mi.jpg",
+      "SourceId": "CakeShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\",
+      "BasePath": "_content/CakeShop",
+      "RelativePath": "images/category/banh-mi.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\category\\banh-mi.jpg"
+    },
+    {
       "Identity": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\category\\banh-que.jpg",
       "SourceId": "CakeShop",
       "SourceType": "Discovered",
@@ -31756,6 +31790,23 @@
       "OriginalItemSpec": "wwwroot\\images\\category\\banh-que.jpg"
     },
     {
+      "Identity": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\category\\banh-que-thom.jpg",
+      "SourceId": "CakeShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\",
+      "BasePath": "_content/CakeShop",
+      "RelativePath": "images/category/banh-que-thom.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\category\\banh-que-thom.jpg"
+    },
+    {
       "Identity": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\category\\banh-que-thom-ngon.jpg",
       "SourceId": "CakeShop",
       "SourceType": "Discovered",
@@ -31771,6 +31822,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\category\\banh-que-thom-ngon.jpg"
+    },
+    {
+      "Identity": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\category\\mini-cake.jpg",
+      "SourceId": "CakeShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\",
+      "BasePath": "_content/CakeShop",
+      "RelativePath": "images/category/mini-cake.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\category\\mini-cake.jpg"
     },
     {
       "Identity": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\wwwroot\\images\\category\\qaaaa.jpg",
