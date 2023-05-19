@@ -69,6 +69,7 @@ namespace CakeShop.Controllers
             return View();
         }
 
+        // phản hồi không lưu trữ trong bộ nhớ cache
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
