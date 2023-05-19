@@ -1,0 +1,95 @@
+﻿@model CakeShop.Models.TblTinTuc
+
+@{
+    ViewData["Title"] = Model.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string url = $"/tin-tuc/{Model.Alias}-{Model.PostId}.html";
+    List<TblTinTuc> BaiVietLienQuan = ViewBag.BaiVietLienQuan;
+}
+
+<section class="blog-details spad">
+    @*header*@
+    <div class="container-fluid p-0 mb-5 pb-5">
+        <div id="header-carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="~/Userasset/img/categories/cake_2.jpg" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class=" text-black" style="max-width: 900px; padding-bottom: 150px ;">
+                            <h1 class=" text-uppercase mb-md-3">Blog</h1>
+                            <div class="d-inline-flex align-items-center text-black">
+                                <h4 class="m-0"><a class="text-success" asp-controller="Blog" asp-action="Index">Home</a></h4>
+                                <i class="fa fa-circle px-3"></i>
+                                <h4 class="m-0">Detail</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*body*@
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2 col-md-5 order-md-1 order-2"></div>
+            <div class="col-lg-8 col-md-7 order-md-1 order-1">
+                <div class="blog__details__text">
+                    @*title*@
+                    <h1 class="text-center ">
+                        <a class="text-body" href="@url">@Model.Title</a>
+                    </h1>
+                    <hr />
+                    <img src="~/images/news/@Model.Thumb" alt="@Model.Title">
+                    <ul>
+                        <hr />
+                        <li><i class="fa fa-calendar-o"></i> @Model.CreatedDate.Value.ToShortDateString()</li>
+
+                    </ul>
+                    <h3 class="text-center ">
+                        @Model.Title
+                    </h3>
+                    <p class="text-center ">
+                        @Model.Scontents
+                    </p>
+                    <p class="text-center ">@Html.Raw(Model.Contents)</p>
+
+                </div>
+                <hr />
+
+                @*bài viết liên quan*@
+                <div >
+                    <h4 class="heading mb-1">Bài viết liên quan</h4>
+                    <hr />
+                    <div>
+                        <ul>
+                            @if (BaiVietLienQuan != null && BaiVietLienQuan.Count() > 0)
+                            {
+                                foreach (var item in BaiVietLienQuan)
+                                {
+                                    string _url = $"/tin-tuc/{item.Alias}-{item.PostId}.html";
+                                    <li class="d-flex">
+                                        <a href="@_url"> <img src="~/images/news/@Model.Thumb" alt="@Model.Title" style=" width: 100px;"></a>
+                                        <ul>
+                                            <li class="d-flex">
+                                                <a class="text-body" href="@_url">@item.Title</a>
+                                            </li>
+                                            <li class="d-flex">>
+                                                <a class="text-body" href="@_url">@item.CreatedDate</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <hr />
+                                }
+
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</section>
+

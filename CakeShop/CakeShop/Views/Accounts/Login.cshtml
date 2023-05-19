@@ -1,0 +1,41 @@
+﻿@model CakeShop.ModelViews.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12 text-center">
+    <h1>Đăng nhập</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <form asp-action="Login">
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="UserName" />
+                  @*  <div class="form-group">
+                        <label>Địa chỉ Email</label>
+                        <input type="email" asp-for="UserName" placeholder="Địa chỉ Email">
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+                    </div>*@
+                    <div class="form-group">
+                        <label asp-for="UserName" class="control-label"></label>
+                        <input asp-for="UserName" class="form-control" />
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password" class="control-label"></label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        @*   <input type="submit" value="Save" class="btn btn-primary" />*@
+                        <button class="btn btn-primary" href="/dang-nhap.html" type="submit">Đăng nhập</button>
+                        <a class="btn btn-info btn-tone" asp-controller="Home" asp-action="Index">Back to List</a>
+                    </div>
+                </form>
+            </form>
+        </div>
+    </div>
+</div>

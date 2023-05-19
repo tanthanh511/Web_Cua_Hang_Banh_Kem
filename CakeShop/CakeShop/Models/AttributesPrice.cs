@@ -14,4 +14,8 @@ public partial class AttributesPrice
     public int? Price { get; set; }
 
     public bool Active { get; set; }
+
+    public virtual Attribute? Attribute { get; set; }
+
+    public virtual Product? Product { get; set; }
 }

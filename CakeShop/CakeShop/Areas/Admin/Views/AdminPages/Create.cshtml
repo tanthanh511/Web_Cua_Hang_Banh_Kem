@@ -1,0 +1,80 @@
+﻿@model CakeShop.Models.Page
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-md-10 ">
+    <div class="text-center">
+        <div class="d-inline-flex align-items-center text-black">
+            <h4 class="m-0"><a class="text-success" asp-area="Admin" asp-controller="AdminPages" asp-action="Index">Page</a></h4>
+            <i class="fa fa-circle px-3"></i>
+            <h4 class="m-0">Create</h4>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-controller="AdminPages" asp-action="Create" method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="PageName" class="control-label"></label>
+                    <input asp-for="PageName" class="form-control" />
+                    <span asp-validation-for="PageName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Contents" class="control-label"></label>
+                    <input asp-for="Contents" class="form-control" />
+                    <span asp-validation-for="Contents" class="text-danger"></span>
+                </div>
+                @*thêm ảnh đại diện*@
+                <div class="form-group">
+                    <label class="font-weight-semibold" for="productBrand">Ảnh đại diện</label>
+                    <input name="fThumb" type="file" class="form-control-file" asp-for="Thumb" />
+                    <span asp-validation-for="Thumb" class="text-danger"></span>
+                </div>
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Published" /> @Html.DisplayNameFor(model => model.Published)
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Title" class="control-label"></label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="MetaDesc" class="control-label"></label>
+                    <input asp-for="MetaDesc" class="form-control" />
+                    <span asp-validation-for="MetaDesc" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="MetaKey" class="control-label"></label>
+                    <input asp-for="MetaKey" class="form-control" />
+                    <span asp-validation-for="MetaKey" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Alias" class="control-label"></label>
+                    <input asp-for="Alias" class="form-control" />
+                    <span asp-validation-for="Alias" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CreatedDate" class="control-label"></label>
+                    <input asp-for="CreatedDate" class="form-control" />
+                    <span asp-validation-for="CreatedDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Ordering" class="control-label"></label>
+                    <input asp-for="Ordering" class="form-control" />
+                    <span asp-validation-for="Ordering" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                    <a class="btn btn-info btn-tone" asp-action="Index">Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

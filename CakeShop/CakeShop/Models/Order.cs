@@ -24,4 +24,10 @@ public partial class Order
     public int? PaymentId { get; set; }
 
     public string? Note { get; set; }
+
+    public virtual Customer? Customer { get; set; }
+
+    public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
+
+    public virtual TransactStatus? TransactStatus { get; set; }
 }

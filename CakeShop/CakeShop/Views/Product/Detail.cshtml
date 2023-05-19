@@ -1,0 +1,197 @@
+﻿@model CakeShop.Models.Product
+
+@{
+    ViewData["Title"] = Model.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<Product> lsProducts = ViewBag.SanPham;
+}
+
+<!-- Hero Section Begin -->
+<section class="hero hero-normal">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-12">
+                <div class="hero__search">
+                    <div class="hero__search__form">
+                        <form action="#">
+                            <div class="hero__search__categories">
+                                All Categories
+                                <span class="arrow_carrot-down"></span>
+                            </div>
+                            <input type="text" placeholder="What do yo u need?">
+                            <button type="submit" class="site-btn">SEARCH</button>
+                        </form>
+                    </div>
+                    <div class="hero__search__phone">
+                        <div class="hero__search__phone__icon">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                        <div class="hero__search__phone__text">
+                            <h5>+84 888 888 888</h5>
+                            <span>support 24/7 time</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section set-bg">
+    <div class="container-fluid p-0 mb-5 pb-5">
+        <div id="header-carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="~/Userasset/img/categories/cake_2.jpg" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+
+                        <div class="text-black" style="max-width: 900px;padding-bottom: 150px ;">
+
+                            <h1 class=" text-uppercase mb-md-3">Shop detail</h1>
+
+                            <div class="d-inline-flex align-items-center text-black">
+                                <h4 class="m-0"><a class="text-success" asp-controller="Product" asp-action="Index">Home</a></h4>
+                                <i class="fa fa-circle px-3"></i>
+                                <h4 class="m-0">Shop detail</h4>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- infomation product -->
+<section class="product-details spad">
+    <div class="container">
+        <div class="row">
+
+            @*image*@
+            <div class="col-lg-6 col-md-6">
+                <div class="product__details__pic">
+                    <div class="product__details__pic__item">
+                        <a href="~/images/products/@Model.Thumb">
+                            <img class="product__details__pic__item--large"
+                                 src="~/images/products/@Model.Thumb" alt="@Model.Title">
+                        </a>
+                    </div>
+                    <div class="product__details__pic__slider owl-carousel">
+                        <img src="~/images/products/banh-kem-socola.jpg" alt="">
+                        <img src="~/images/products/banh-kem-socola.jpg" alt="">
+                        <img src="~/images/products/banh-kem-socola.jpg" alt="">
+                        <img src="~/images/products/banh-kem-socola.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            @*detail*@
+            <div class="col-lg-6 col-md-6">
+                <div class="product__details__text">
+                    <h3>@Model.ProductName</h3>
+                    <div class="product__details__rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <span>(18 reviews)</span>
+                    </div>
+                    <div class="product__details__price">@Model.Price VND</div>
+                    <p>
+                        @Model.ShortDesc
+                    </p>
+                    <div class="product__details__quantity">
+                        <div class="quantity">
+                            <div class="pro-qty">
+                                <input type="text" value="1">
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="primary-btn">ADD TO CARD</a>
+
+                    <ul>
+                        <li><b>Category</b> <a href="/@Model.Cat.Alias">@Model.Cat.CatName</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="col-lg-12">
+                <div class="product__details__tab">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab"
+                               aria-selected="true">Description</a>
+                        </li>
+                     
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                            <div class="product__details__tab__desc">
+                                <p>
+                                    @Model.Description  
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- you can be love it -->
+<section class="related-product">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+               
+
+                <div class="section-title related__product__title">
+                    <hr />
+                    <h4>You can be love it</h4>
+                    <h2>Related products</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+           
+            @if(lsProducts != null )
+            {
+                foreach (var item in lsProducts)
+                {
+                    string url = "";
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <div class="product__item">
+                            <div class="product__item__pic set-bg">
+                                <a href="@url">
+                                    <img class="img-full" src="~/images/products/@item.Thumb" alt="@item.Title">
+                                </a>
+                                <ul class="product__item__pic__hover">
+                                    <li><a href="@url"><i class="fa fa-heart"></i></a></li>
+                                    <li><a href="@url"><i class="fa fa-retweet"></i></a></li>
+                                    <li><a href="@url"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="product__item__text">
+                                <h6><a href="@url">@item.ProductName</a></h6>
+                                <h5>@item.Price</h5>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</section>
+

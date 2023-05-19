@@ -1,0 +1,84 @@
+﻿@using PagedList.Core.Mvc
+@*@model IEnumerable<CakeShop.Models.Page>*@
+@model PagedList.Core.IPagedList<CakeShop.Models.Page>
+
+
+@{
+    int CurrentPage = ViewBag.CurrentPage;
+    ViewData["Title"] = "Danh sách Paged";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="col-md-10 text-center">
+
+    <h1>Quản lí Paged: page @CurrentPage</h1>
+    <p>
+        <a class="btn btn-info btn-tone" asp-action="Create">Create New</a>
+    </p>
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row m-b-30">
+                  
+
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>PageName</th>
+                                    <th>Active</th>
+                                    <th>#</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @if (Model != null)
+                                {
+                                    foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.PageId</td>
+                                            <td>@item.PageName</td>
+                                            <td>
+                                                @if (item.Published == true)
+                                                {
+                                                    <div>
+                                                        <div class="badge badge-success badge-dot m-r-10"></div>
+                                                        <div>Public</div>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div>
+                                                        <div class="badge badge-success badge-dot m-r-10"></div>
+                                                        <div>Non-Public</div>
+                                                    </div>
+                                                }
+                                            </td>
+
+                                            <td >
+                                                <a class="btn btn-warning btn-tone m-r-5" asp-area="Admin" asp-controller="AdminPages" asp-action="Edit" asp-route-id="@item.PageId">Edit</a>
+                                                <a class="btn btn-info btn-tone m-r-5" asp-area="Admin" asp-controller="AdminPages" asp-action="Details" asp-route-id="@item.PageId">Detail</a>
+                                                <a class="btn btn-danger btn-tone m-r-5" asp-area="Admin" asp-controller="AdminPages" asp-action="Delete" asp-route-id="@item.PageId">Delete</a>
+
+                                            </td>
+
+                                        </tr>
+                                    }
+                                }
+
+                            </tbody>
+                        </table>
+                        <div aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <pager class="pager-container" list="@Model" asp-area="Admin" asp-controller="AdminCustomers" asp-action="Index" />
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

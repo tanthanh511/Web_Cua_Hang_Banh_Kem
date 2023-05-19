@@ -1,5 +1,6 @@
 using AspNetCoreHero.ToastNotification;
 using CakeShop.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using System.Configuration;
 using System.Text.Encodings.Web;
@@ -10,11 +11,21 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
     builder.Services.AddDbContext<CuaHangBanhKemContext>(options => options.UseSqlServer(
-     builder.Configuration.GetConnectionString("DefaultConnection")));
-    //builder.Services.AddDbContext<CuaHangBanhKemContext>(option => option.UseSqlServer(stringConnectdb));
-    //builder.Services.AddSingleton<HtmlEncoder>(HtmlEncoder.Create(allowedRanges: new[] {UnicodeRange.ReferenceEquals()}));
+    builder.Configuration.GetConnectionString("DefaultConnection")));
+//builder.Services.AddDbContext<CuaHangBanhKemContext>(option => option.UseSqlServer(stringConnectdb));
+//builder.Services.AddSingleton<HtmlEncoder>(HtmlEncoder.Create(allowedRanges: new[] {UnicodeRange.ReferenceEquals()}));
+    builder.Services.AddSession();
+    builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(p =>
+                {
+                    p.Cookie.Name = "UserLoginCookie";
+                    p.ExpireTimeSpan = TimeSpan.FromDays(1);
+                    //p.LoginPath = "/dang-nhap.html";
+                    //p.LogoutPath = "/dang-xuat/html";
+                    p.AccessDeniedPath = "/not-found.html";
+                });
 
-    builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
     builder.Services.AddNotyf(config => { config.DurationInSeconds = 10; config.IsDismissable = true; config.Position = NotyfPosition.BottomRight; });
 
 
@@ -32,9 +43,10 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
+app.UseSession();
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseEndpoints(endpoints =>

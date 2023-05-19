@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CakeShop.Models;
+using AspNetCoreHero.ToastNotification.Abstractions;
 
 namespace CakeShop.Areas.Admin.Controllers
 {
@@ -13,10 +14,12 @@ namespace CakeShop.Areas.Admin.Controllers
     public class AdminRolesController : Controller
     {
         private readonly CuaHangBanhKemContext _context;
+        public INotyfService _notifyService { get; }
 
-        public AdminRolesController(CuaHangBanhKemContext context)
+        public AdminRolesController(CuaHangBanhKemContext context, INotyfService notyfService)
         {
             _context = context;
+            _notifyService = notyfService;
         }
 
         // GET: Admin/AdminRoles
@@ -52,9 +55,7 @@ namespace CakeShop.Areas.Admin.Controllers
         }
 
         // POST: Admin/AdminRoles/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+       
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("RoleId,RoleName,Description")] Role role)
         {
@@ -62,6 +63,7 @@ namespace CakeShop.Areas.Admin.Controllers
             {
                 _context.Add(role);
                 await _context.SaveChangesAsync();
+                _notifyService.Success("Tạo mới thành công");
                 return RedirectToAction(nameof(Index));
             }
             return View(role);
@@ -84,8 +86,7 @@ namespace CakeShop.Areas.Admin.Controllers
         }
 
         // POST: Admin/AdminRoles/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("RoleId,RoleName,Description")] Role role)
@@ -101,11 +102,13 @@ namespace CakeShop.Areas.Admin.Controllers
                 {
                     _context.Update(role);
                     await _context.SaveChangesAsync();
+                    _notifyService.Success("Tạo mới thành công");
                 }
                 catch (DbUpdateConcurrencyException)
                 {
                     if (!RoleExists(role.RoleId))
                     {
+                        _notifyService.Success("Có lỗi xảy ra");
                         return NotFound();
                     }
                     else
@@ -152,6 +155,7 @@ namespace CakeShop.Areas.Admin.Controllers
             }
             
             await _context.SaveChangesAsync();
+            _notifyService.Success("Xóa quyền truy cập thành công");
             return RedirectToAction(nameof(Index));
         }
 

@@ -10808,11 +10808,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\webnangcao\\do_an\\WebNC\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\CakeShop.csproj",
+      "projectUniqueName": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\CakeShop.csproj",
       "projectName": "CakeShop",
-      "projectPath": "D:\\webnangcao\\do_an\\WebNC\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\CakeShop.csproj",
+      "projectPath": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\CakeShop.csproj",
       "packagesPath": "C:\\Users\\Thanh\\.nuget\\packages\\",
-      "outputPath": "D:\\webnangcao\\do_an\\WebNC\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\obj\\",
+      "outputPath": "D:\\webnangcao\\do_an\\Web_Cua_Hang_Banh_Kem\\CakeShop\\CakeShop\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Thanh\\AppData\\Roaming\\NuGet\\NuGet.Config",
